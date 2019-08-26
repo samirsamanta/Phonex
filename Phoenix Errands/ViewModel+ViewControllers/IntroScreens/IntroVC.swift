@@ -14,6 +14,7 @@ class IntroVC: UIViewController {
         super.viewDidLoad()
         self.setNeedsStatusBarAppearanceUpdate()
         UIApplication.shared.statusBarView?.backgroundColor = Constants.App.statusBarColor
+                print("Okay")
     }
     
     @IBAction func buttonSkip(_ sender: Any) {
