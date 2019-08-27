@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class DashboardVC: BaseViewController {
 
+    @IBOutlet weak var lblTry: UILabel!
+    @IBOutlet weak var lblTrasnport: UITextField!
     @IBOutlet weak var serviceCategoryCollection: UICollectionView!
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-       UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear//Constants.App.statusBarColor
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear//Constants.App.statusBarColor
         headerView.lblHeaderTitle.text = "What service do you refil"
         headerView.imgProfileIcon.isHidden = false
         headerView.menuButtonOutlet.isHidden = true
@@ -22,6 +27,23 @@ class DashboardVC: BaseViewController {
         headerView.imgViewMenu.image = UIImage(named:"whiteback")
         self.serviceCategoryCollection.delegate = self
         self.serviceCategoryCollection.dataSource = self
+        setText()
+    }
+    
+    @objc func setText()
+    {
+        headerView.lblHeaderTitle.text = "What service do you refil".localized();
+        lblTry.text = "Try".localized();
+        serviceCategoryCollection.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -37,6 +59,7 @@ extension DashboardVC : UICollectionViewDelegate , UICollectionViewDataSource,UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionCell", for: indexPath as IndexPath) as! ServiceCollectionCell
+        cell.lblServiceCategoryName.text = "House".localized();
         return cell
     }
     

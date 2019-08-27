@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Complete your information to apply for mission"; ObjectID = "9an-2p-Hu1"; */
+"9an-2p-Hu1.text" = "Complete your information to apply for mission";
+
+/* Class = "UITextField"; text = "Section"; ObjectID = "Xdx-zB-fEY"; */
+"Xdx-zB-fEY.text" = "Section";
+
+/* Class = "UIButton"; normalTitle = "My skills"; ObjectID = "zsf-vD-Wc7"; */
+"zsf-vD-Wc7.normalTitle" = "My skills";

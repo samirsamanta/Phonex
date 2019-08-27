@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class ContactsVC: BaseViewController
 {
-
     @IBOutlet weak var contactCollectionView: UICollectionView!
+    @IBOutlet weak var lblDontHaveContact: UILabel!
+    @IBOutlet weak var btnDiscover: UIButton!
+    @IBOutlet weak var lblPhoenicOfMoment: UILabel!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.contactCollectionView.delegate = self
         self.contactCollectionView.dataSource = self
         headerSetup()
+        setText()
     }
+    
+    @IBAction func btnDiscoverTapped(_ sender: Any)
+    {
+        let vc = UIStoryboard.init(name: "Contacts", bundle: Bundle.main).instantiateViewController(withIdentifier: "DiscoverVC") as? DiscoverVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
     func headerSetup()
     {
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
@@ -31,9 +43,27 @@ class ContactsVC: BaseViewController
         headerView.notificationValueView.isHidden = true
         headerView.imgProfileIcon.isHidden = true
     }
-}
-extension ContactsVC : UICollectionViewDelegate , UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
+    @objc func setText()
+    {
+        lblPhoenicOfMoment.text = "Phoenix of the moment".localized();
+        lblDontHaveContact.text = "You do not have any contacts yet. In the meantime, find out the current stooters.".localized();
+        headerView.lblHeaderTitle.text = "Contacts".localized();
+        btnDiscover.setTitle("Discover".localized(), for: UIControl.State.normal)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+}
+extension ContactsVC : UICollectionViewDelegate , UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
+{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

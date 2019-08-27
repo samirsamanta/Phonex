@@ -127,6 +127,9 @@ class BaseViewController: UIViewController {
         
         tabBarView.onClickMonitorButtonAction = {() -> Void in
             
+            let vc = UIStoryboard.init(name: "Activity", bundle: Bundle.main).instantiateViewController(withIdentifier: "ActivityVC") as? ActivityVC
+            self.navigationController?.pushViewController(vc!, animated: false)
+            
         }
         tabBarView.onClickApplyButtonAction = {() -> Void in
             let vc = UIStoryboard.init(name: "Apply", bundle: Bundle.main).instantiateViewController(withIdentifier: "ApplyVC") as? ApplyVC

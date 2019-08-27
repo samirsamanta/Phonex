@@ -9,7 +9,9 @@ target 'Phoenix Errands' do
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage'
   pod 'GoogleMaps'
-
+  pod 'Localize-Swift'
+  pod 'PayCardsRecognizer'
+  pod 'HideShowPasswordTextField', :git => 'https://github.com/Guidebook/HideShowPasswordTextField'
   # Pods for Phoenix Errands
 
   target 'Phoenix ErrandsTests' do

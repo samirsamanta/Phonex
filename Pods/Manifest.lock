@@ -8,8 +8,11 @@ PODS:
   - GoogleMaps/Base (3.1.0)
   - GoogleMaps/Maps (3.1.0):
     - GoogleMaps/Base
+  - HideShowPasswordTextField (0.3)
   - IQKeyboardManagerSwift (6.3.0)
+  - Localize-Swift (2.0.0)
   - ObjectMapper (3.4.2)
+  - PayCardsRecognizer (1.1.4)
   - SDWebImage (5.0.2):
     - SDWebImage/Core (= 5.0.2)
   - SDWebImage/Core (5.0.2)
@@ -18,7 +21,10 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper (~> 5.0)
   - GoogleMaps
+  - HideShowPasswordTextField (from `https://github.com/Guidebook/HideShowPasswordTextField`)
   - IQKeyboardManagerSwift
+  - Localize-Swift
+  - PayCardsRecognizer
   - SDWebImage
 
 SPEC REPOS:
@@ -27,17 +33,31 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - GoogleMaps
     - IQKeyboardManagerSwift
+    - Localize-Swift
     - ObjectMapper
+    - PayCardsRecognizer
     - SDWebImage
+
+EXTERNAL SOURCES:
+  HideShowPasswordTextField:
+    :git: https://github.com/Guidebook/HideShowPasswordTextField
+
+CHECKOUT OPTIONS:
+  HideShowPasswordTextField:
+    :commit: d85212236651d141ba387b65edcff9940ab894f3
+    :git: https://github.com/Guidebook/HideShowPasswordTextField
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
+  HideShowPasswordTextField: 9426177a6b6498a6084e29ad65bba7d1157951b7
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  PayCardsRecognizer: b939eec21c6890d57c9f22cb8856517922b097a2
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
 
-PODFILE CHECKSUM: b5a822369f6de3413bb0f87d2a3e01dbdc0febeb
+PODFILE CHECKSUM: f2d1ab9a1cf15b05bc2d2e62483701fa3a6f8739
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.4

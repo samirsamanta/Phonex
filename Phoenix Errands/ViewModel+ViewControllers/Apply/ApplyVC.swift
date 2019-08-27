@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class ApplyVC: BaseViewController
 {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnMySkill: UIButton!
     @IBOutlet weak var txtSectionDropdown: IQDropDownTextField!
+    @IBOutlet weak var lblComplete: UILabel!
     
     var nameArr = [String]()
     var serviceArr = [String]()
     var btntextArr = [String]()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -29,6 +33,22 @@ class ApplyVC: BaseViewController
         btntextArr = ["New","Full","Rest place"]
         setDropDown()
         headerSetup()
+        setText()
+    }
+    @objc func setText()
+    {
+        lblComplete.text = "Complete your information to apply for mission".localized();
+        btnMySkill.setTitle("My skills".localized(), for: UIControl.State.normal)
+        headerView.lblHeaderTitle.text = "Apply".localized();
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     func headerSetup()
     {
@@ -53,7 +73,7 @@ class ApplyVC: BaseViewController
     }
     @IBAction func mySkillTapped(_ sender: Any)
     {
-        let vc = UIStoryboard.init(name: "Request", bundle: Bundle.main).instantiateViewController(withIdentifier: "RequestVC") as? RequestVC
+        let vc = UIStoryboard.init(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProviderServiceList") as? ProviderServiceList
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
@@ -77,7 +97,6 @@ extension ApplyVC : UITableViewDelegate, UITableViewDataSource {
         
         return Cell
     }
-    
     func tableView( _ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         print("You selected cell #\(indexPath.row)!")

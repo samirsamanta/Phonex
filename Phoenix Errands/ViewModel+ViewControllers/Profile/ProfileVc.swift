@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class ProfileVc: BaseViewController
 {
     @IBOutlet weak var imgthumb: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var lblNew: UILabel!
+    @IBOutlet weak var lblAddMyService: UILabel!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -24,7 +27,14 @@ class ProfileVc: BaseViewController
         imgthumb.layer.borderColor = UIColor(red:17/255, green:136/255, blue:255/255, alpha: 1).cgColor
         imgthumb.layer.borderWidth = 1
         headerSetup()
+        setText()
     }
+    @IBAction func btnAddServices(_ sender: Any)
+    {
+        let vc = UIStoryboard.init(name: "Profile", bundle: Bundle.main).instantiateViewController(withIdentifier: "AddServiceVC") as? AddServiceVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
     func headerSetup()
     {
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear//Constants.App.statusBarColor
@@ -37,6 +47,24 @@ class ProfileVc: BaseViewController
         headerView.notificationValueView.isHidden = true
         headerView.imgProfileIcon.isHidden = true
     }
+    
+    @objc func setText()
+    {
+        lblNew.text = "New".localized();
+        lblAddMyService.text = "Add my services".localized();
+        headerView.lblHeaderTitle.text = "My profile".localized();
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @IBAction func btnProfiledetailsTapped(_ sender: Any)
     {
         let vc = UIStoryboard.init(name: "Profile", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProfileDetailsVC") as? ProfileDetailsVC
@@ -59,6 +87,24 @@ extension ProfileVc : UITableViewDelegate, UITableViewDataSource {
         
         return Cell
     }
+    func tableView( _ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        print("You selected cell #\(indexPath.row)!")
+        switch indexPath.row {
+        case 0:
+            let vc = UIStoryboard.init(name: "Profile", bundle: Bundle.main).instantiateViewController(withIdentifier: "AddPaymentVC") as? AddPaymentVC
+            self.navigationController?.pushViewController(vc!, animated: true)
+        case 1:
+            let vc = UIStoryboard.init(name: "Profile", bundle: Bundle.main).instantiateViewController(withIdentifier: "WereGoingVC") as? WereGoingVC
+            self.navigationController?.pushViewController(vc!, animated: true)
+        case 2:
+            let vc = UIStoryboard.init(name: "Profile", bundle: Bundle.main).instantiateViewController(withIdentifier: "SettingsVC") as? SettingsVC
+            self.navigationController?.pushViewController(vc!, animated: true)
+        default:
+            break
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 56

@@ -7,15 +7,45 @@
 //
 
 import UIKit
+import Localize_Swift
 //EEF3F7
 class HomeVC: UIViewController {
 
+    @IBOutlet weak var btnorLogin: UILabel!
+    @IBOutlet weak var lblAlreadyregistred: UIButton!
+    @IBOutlet weak var btnRegistrationWithEmail: UIButton!
+    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblCreateAnAccount: UILabel!
+    
     @IBOutlet weak var formTableView: UITableView!
+    var actionSheet: UIAlertController!
+    let availableLanguages = Localize.availableLanguages()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setText()
 
         self.formTableView.delegate = self
         self.formTableView.dataSource = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
+    }
+    @objc func setText(){
+        lblCreateAnAccount.text = "Create an account".localized();
+        //btnRegistrationWithEmail.setTitle("Registration with an email".localized(), for: UIControl.State.normal)
+        //lblAlreadyregistred.setTitle("Registration with an email".localized(), for: UIControl.State.normal)
+        //btnorLogin.text = "Log in".localized();
+        //lblDescription.text = "Register or log in to discover the services offered".localized();
+        
+        
+        //btnNext
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
     @IBAction func btnCloseAction(_ sender: Any) {

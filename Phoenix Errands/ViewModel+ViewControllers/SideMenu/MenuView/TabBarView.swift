@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class TabBarView: UIView {
 
     @IBOutlet var tabBarView: UIView!
     
+    @IBOutlet weak var lblMe: UILabel!
+    @IBOutlet weak var lblApply: UILabel!
+    @IBOutlet weak var lblActivity: UILabel!
+    @IBOutlet weak var lblContacts: UILabel!
+    @IBOutlet weak var lblHome: UILabel!
     var onClickHomeButtonAction: (() -> Void)? = nil
     var onClickContactButtonAction: (() -> Void)? = nil
     var onClickMonitorButtonAction: (() -> Void)? = nil
     var onClickApplyButtonAction: (() -> Void)? = nil
     var onClickProfileButtonAction: (() -> Void)? = nil
+    let availableLanguages = Localize.availableLanguages()
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -25,11 +32,20 @@ class TabBarView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
+    }
+    @objc func setText(){
+        lblHome.text = "Home".localized();
+        lblContacts.text = "Contacts".localized();
+        lblActivity.text = "Activity".localized();
+        lblApply.text = "Apply".localized();
+        lblMe.text = "Me".localized();
     }
     
     private func commonInit(){
