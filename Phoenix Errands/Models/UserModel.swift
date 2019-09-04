@@ -7,7 +7,23 @@
 //
 
 import UIKit
+import ObjectMapper
+import Alamofire
+import AlamofireObjectMapper
 
-class UserModel: NSObject {
+class UserModel: Mappable {
 
+    var userName : String?
+    var userPassword : String?
+    var userFCMToken : String?
+    init() {}
+    required init?(map: Map) {
+        mapping(map: map)
+    }
+    
+    func mapping(map: Map) {
+        userName <- map["userEmail"]
+        userPassword <- map["userpassword"]
+        userFCMToken <- map["userFCMToken"]
+    }
 }

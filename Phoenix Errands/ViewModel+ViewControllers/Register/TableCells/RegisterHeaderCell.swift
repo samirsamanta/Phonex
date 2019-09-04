@@ -34,6 +34,21 @@ class RegisterFieldCell: UITableViewCell {
         // Initialization code
     }
     
+    func initializeCell(cellDic : UserRegister , indexPath : Int){
+        switch indexPath {
+        case 1:
+            txtField.text = cellDic.userFirstName
+        case 2:
+            txtField.text = cellDic.userLastName
+        case 3:
+            txtField.text = cellDic.userEmail
+        case 4:
+            txtField.text = cellDic.userpassword
+        default:
+            break
+        }
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         

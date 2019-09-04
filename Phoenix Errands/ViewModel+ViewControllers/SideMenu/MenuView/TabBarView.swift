@@ -10,6 +10,12 @@ import UIKit
 import Localize_Swift
 
 class TabBarView: UIView {
+    
+    @IBOutlet weak var menuHomeImg: UIImageView!
+    @IBOutlet weak var menuContactImg: UIImageView!
+    @IBOutlet weak var menuActivityImg: UIImageView!
+    @IBOutlet weak var menuApplyImg: UIImageView!
+    @IBOutlet weak var menuProfileImg: UIImageView!
 
     @IBOutlet var tabBarView: UIView!
     
@@ -41,11 +47,11 @@ class TabBarView: UIView {
         NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
     }
     @objc func setText(){
-        lblHome.text = "Home".localized();
-        lblContacts.text = "Contacts".localized();
-        lblActivity.text = "Activity".localized();
-        lblApply.text = "Apply".localized();
-        lblMe.text = "Me".localized();
+//        lblHome.text = "Home".localized();
+//        lblContacts.text = "Contacts".localized();
+//        lblActivity.text = "Activity".localized();
+//        lblApply.text = "Apply".localized();
+//        lblMe.text = "Me".localized();
     }
     
     private func commonInit(){
@@ -58,15 +64,19 @@ class TabBarView: UIView {
     
     @IBAction func btnHomeAction(_ sender: Any) {
         if self.onClickHomeButtonAction != nil{
+            
             self.onClickHomeButtonAction!()
+            
         }
     }
     
     @IBAction func btnContactAction(_ sender: Any) {
         if self.onClickContactButtonAction != nil{
             self.onClickContactButtonAction!()
+            
         }
     }
+    
     @IBAction func btnMonitorAction(_ sender: Any) {
         if self.onClickMonitorButtonAction != nil{
             self.onClickMonitorButtonAction!()
@@ -81,6 +91,7 @@ class TabBarView: UIView {
     
     @IBAction func btnProfileAction(_ sender: Any) {
         if self.onClickProfileButtonAction != nil{
+            
             self.onClickProfileButtonAction!()
         }
     }

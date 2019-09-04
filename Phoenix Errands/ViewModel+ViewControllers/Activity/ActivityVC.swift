@@ -37,10 +37,14 @@ class ActivityVC: BaseViewController
     }
     @objc func setText()
     {
-        //lblPublishedResult.text = "You published requests and those where you applied will appear here".localized();
         headerView.lblHeaderTitle.text = "Activity".localized();
-        //btnAskedService.setTitle("Ask for a service".localized(), for: UIControl.State.normal)
-       // btnPeoposerMyService.setTitle("Peoposer my service".localized(), for: UIControl.State.normal)
+        self.tabBarView.lblHome.textColor = UIColor.lightGray
+        self.tabBarView.lblMe.textColor = UIColor.lightGray
+        self.tabBarView.lblApply.textColor = UIColor.lightGray
+        self.tabBarView.lblActivity.textColor = UIColor.black
+        self.tabBarView.lblActivity.font = UIFont.boldSystemFont(ofSize: 14.0)
+        self.tabBarView.lblContacts.textColor = UIColor.lightGray
+        self.tabBarView.menuActivityImg.image = UIImage(named:"DarkActivity")
     }
     
     func CustomSegmentControl()

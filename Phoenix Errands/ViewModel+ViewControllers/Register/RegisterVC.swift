@@ -12,6 +12,13 @@ class RegisterVC: UIViewController {
 
     @IBOutlet weak var registerTable: UITableView!
     var placeHolderArr : NSArray?
+    var registerObject = UserRegister()
+    
+    lazy var viewModel: RegisterVM = {
+        return RegisterVM()
+    }()
+    var userDetails = UserResponse()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +26,7 @@ class RegisterVC: UIViewController {
         self.registerTable.delegate = self
         self.registerTable.dataSource = self
          self.registerTable.register(UINib(nibName: "RegisterPasswordCheckCell", bundle: Bundle.main), forCellReuseIdentifier: "RegisterPasswordCheckCell")
+        self.initializeViewModel()
     }
     
     @IBAction func btnBackAction(_ sender: Any) {
@@ -30,8 +38,49 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func btnRegisterAction(_ sender: Any) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.openHomeViewController()
+        registerObject.userPhone = ""
+        registerObject.userFCMToken = ""
+        viewModel.sendRegisterCredentialsToAPIService(user : registerObject)
+    }
+    
+    func initializeViewModel() {
+        
+        viewModel.showAlertClosure = {[weak self]() in
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMessage {
+                    self?.showAlertWithSingleButton(title: commonAlertTitle, message: message, okButtonText: okText, completion: nil)
+                }
+            }
+        }
+        
+        viewModel.updateLoadingStatus = {[weak self]() in
+            DispatchQueue.main.async {
+                
+                let isLoading = self?.viewModel.isLoading ?? false
+                if isLoading {
+                    self?.addLoaderView()
+                } else {
+                    self?.removeLoaderView()
+                }
+            }
+        }
+        
+        viewModel.refreshViewClosure = {[weak self]() in
+            DispatchQueue.main.async {
+                
+                if  (self?.viewModel.userDetails.status) == 200 {
+                    self!.userDetails = (self?.viewModel.userDetails)!
+                    
+                    AppPreferenceService.setInteger(IS_LOGGED_IN, key: PreferencesKeys.loggedInStatus)
+                    AppPreferenceService.setString(String((self?.viewModel.userDetails.id!)!), key: PreferencesKeys.userID)
+                    AppPreferenceService.setString(String((self?.viewModel.userDetails.email!)!), key: PreferencesKeys.userName)
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.openHomeViewController()
+                }else{
+                    self?.showAlertWithSingleButton(title: commonAlertTitle, message: (self?.viewModel.userDetails.message)!, okButtonText: okText, completion: nil)
+                }
+            }
+        }
     }
 }
 
@@ -55,9 +104,13 @@ extension RegisterVC : UITableViewDelegate, UITableViewDataSource {
             let Cell = tableView.dequeueReusableCell(withIdentifier: "RegisterFieldCell") as! RegisterFieldCell
             let name = placeHolderArr![indexPath.row - 1]
             Cell.txtField.placeholder = (name as! String)
+            Cell.txtField.delegate = self
+            Cell.txtField.tag = indexPath.row
+            Cell.initializeCell(cellDic : registerObject , indexPath : indexPath.row)
             return Cell
         case 5:
             let Cell = tableView.dequeueReusableCell(withIdentifier: "RegisterPasswordCheckCell") as! RegisterPasswordCheckCell
+            Cell.initializeCell(cellDic: registerObject, indexPath: indexPath.row)
             return Cell
         default:
             return UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
@@ -75,5 +128,42 @@ extension RegisterVC : UITableViewDelegate, UITableViewDataSource {
         default:
             return 0
         }
+    }
+}
+extension RegisterVC: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField){
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        let txtAfterUpdate = textField.text! as NSString
+        let updateText = txtAfterUpdate.replacingCharacters(in: range, with: string) as NSString
+        print("Updated TextField:: \(updateText)")
+        switch textField.tag {
+        case 1:
+            registerObject.userFirstName = updateText as String
+        case 2:
+            registerObject.userLastName = updateText as String
+        case 3:
+            registerObject.userEmail = updateText as String
+        case 4:
+            registerObject.userpassword = updateText as String
+            let indexPath = IndexPath(item: 5, section: 0)
+            registerTable.reloadRows(at: [indexPath], with: .none)
+        default:
+            break
+        }
+        return true
     }
 }

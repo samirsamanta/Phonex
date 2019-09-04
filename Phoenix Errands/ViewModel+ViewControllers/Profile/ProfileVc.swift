@@ -29,6 +29,7 @@ class ProfileVc: BaseViewController
         headerSetup()
         setText()
     }
+    
     @IBAction func btnAddServices(_ sender: Any)
     {
         let vc = UIStoryboard.init(name: "Profile", bundle: Bundle.main).instantiateViewController(withIdentifier: "AddServiceVC") as? AddServiceVC
@@ -50,6 +51,13 @@ class ProfileVc: BaseViewController
     
     @objc func setText()
     {
+        self.tabBarView.lblHome.textColor = UIColor.lightGray
+        self.tabBarView.lblMe.textColor = UIColor.black
+        self.tabBarView.lblApply.textColor = UIColor.lightGray
+        self.tabBarView.lblActivity.textColor = UIColor.lightGray
+        self.tabBarView.lblContacts.textColor = UIColor.lightGray
+        self.tabBarView.lblMe.font = UIFont.boldSystemFont(ofSize: 14.0)
+        self.tabBarView.menuProfileImg.image = UIImage(named:"DarkProfile")
         lblNew.text = "New".localized();
         lblAddMyService.text = "Add my services".localized();
         headerView.lblHeaderTitle.text = "My profile".localized();

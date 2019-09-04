@@ -13,4 +13,7 @@ class ContactCollectionViewCell: UICollectionViewCell
     @IBOutlet weak var imgContactView: UIImageView!
     @IBOutlet weak var lblContactName: UILabel!
     
+    func initializeCellDetails(cellDic : ContactList){
+        lblContactName.text = cellDic.contactName
+    }
 }

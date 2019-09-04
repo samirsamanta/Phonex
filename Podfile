@@ -8,6 +8,8 @@ target 'Phoenix Errands' do
   pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage'
+  pod 'moa'
+  pod 'Auk'
   pod 'GoogleMaps'
   pod 'Localize-Swift'
   pod 'PayCardsRecognizer'

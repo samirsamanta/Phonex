@@ -37,7 +37,7 @@ class ProfileDetailsVC: BaseViewController
         imgThumb.layer.borderColor = UIColor(red:17/255, green:136/255, blue:255/255, alpha: 1).cgColor
         imgThumb.layer.borderWidth = 1
         headerSetup()
-        self.setText()
+        //self.setText()
     }
     @objc func setText()
     {

@@ -16,13 +16,22 @@ class ContactsVC: BaseViewController
     @IBOutlet weak var btnDiscover: UIButton!
     @IBOutlet weak var lblPhoenicOfMoment: UILabel!
     
+    lazy var viewModel: ContactVM = {
+        return ContactVM()
+    }()
+    
+    var contactDetails = ContactModel()
+    var contactArr : [ContactList]?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.contactCollectionView.delegate = self
         self.contactCollectionView.dataSource = self
-        headerSetup()
-        setText()
+        self.headerSetup()
+        self.setText()
+        self.initializeViewModel()
+        self.getContactList()
     }
     
     @IBAction func btnDiscoverTapped(_ sender: Any)
@@ -46,11 +55,19 @@ class ContactsVC: BaseViewController
     
     @objc func setText()
     {
+        self.tabBarView.lblHome.textColor = UIColor.lightGray
+        self.tabBarView.lblMe.textColor = UIColor.lightGray
+        self.tabBarView.lblApply.textColor = UIColor.lightGray
+        self.tabBarView.lblActivity.textColor = UIColor.lightGray
+        self.tabBarView.lblContacts.textColor = UIColor.black
+        self.tabBarView.lblContacts.font = UIFont.boldSystemFont(ofSize: 14.0)
+        self.tabBarView.menuContactImg.image = UIImage(named:"DarkContact")
         lblPhoenicOfMoment.text = "Phoenix of the moment".localized();
         lblDontHaveContact.text = "You do not have any contacts yet. In the meantime, find out the current stooters.".localized();
         headerView.lblHeaderTitle.text = "Contacts".localized();
         btnDiscover.setTitle("Discover".localized(), for: UIControl.State.normal)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
@@ -61,7 +78,48 @@ class ContactsVC: BaseViewController
         NotificationCenter.default.removeObserver(self)
     }
     
+    func getContactList(){
+        viewModel.getContactDetailsToAPIService()
+    }
+    
+    func initializeViewModel() {
+        
+        viewModel.showAlertClosure = {[weak self]() in
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMessage {
+                    self?.showAlertWithSingleButton(title: commonAlertTitle, message: message, okButtonText: okText, completion: nil)
+                }
+            }
+        }
+        
+        viewModel.updateLoadingStatus = {[weak self]() in
+            DispatchQueue.main.async {
+                
+                let isLoading = self?.viewModel.isLoading ?? false
+                if isLoading {
+                    self?.addLoaderView()
+                } else {
+                    self?.removeLoaderView()
+                }
+            }
+        }
+        
+        viewModel.refreshViewClosure = {[weak self]() in
+            DispatchQueue.main.async {
+                
+                if (self?.viewModel.contactDetails.status) == 201 {
+                    self!.contactDetails = (self?.viewModel.contactDetails)!
+                    self!.contactArr = (self?.viewModel.contactDetails.contactArr)!
+                    self!.contactCollectionView.reloadData()
+                }else{
+                    self?.showAlertWithSingleButton(title: commonAlertTitle, message: (self?.viewModel.contactDetails.message)!, okButtonText: okText, completion: nil)
+                }
+            }
+        }
+    }
+    
 }
+
 extension ContactsVC : UICollectionViewDelegate , UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
 {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -69,7 +127,11 @@ extension ContactsVC : UICollectionViewDelegate , UICollectionViewDataSource,UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int)-> Int {
-        return 10
+        if contactArr != nil  && (self.contactArr?.count)! > 0{
+            return (self.contactArr?.count)!
+        }else{
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -79,34 +141,9 @@ extension ContactsVC : UICollectionViewDelegate , UICollectionViewDataSource,UIC
         cell.imgContactView.clipsToBounds = true
         cell.imgContactView.layer.borderColor = UIColor(red:17/255, green:136/255, blue:255/255, alpha: 1).cgColor
         cell.imgContactView.layer.borderWidth = 1
+        cell.initializeCellDetails(cellDic : contactArr![indexPath.row])
         return cell
     }
-    
-   /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width : CGFloat = (collectionView.frame.width - (20 + 20))/2 //150
-        let height: CGFloat = 170
-        return CGSize(width: width, height: height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        if section == 0 {
-            return 10
-        }else{
-            return 10
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        if section == 0 {
-            return 10
-        }else{
-            return 10
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
-        return UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 20)
-    }*/
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         //ContactPersonProfileVC

@@ -7,8 +7,6 @@
 //
 
 import UIKit
-
-
 class BaseViewController: UIViewController {
     
     var vwTitleHeadr: UIView!
@@ -115,29 +113,34 @@ class BaseViewController: UIViewController {
         
         tabBarView.onClickHomeButtonAction = {() -> Void in
             
+            
+            
             let vc = UIStoryboard.init(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "DashboardVC") as? DashboardVC
             self.navigationController?.pushViewController(vc!, animated: false)
         }
         
         tabBarView.onClickContactButtonAction = {() -> Void in
+            
             let vc = UIStoryboard.init(name: "Contacts", bundle: Bundle.main).instantiateViewController(withIdentifier: "ContactsVC") as? ContactsVC
             self.navigationController?.pushViewController(vc!, animated: false)
             
         }
         
         tabBarView.onClickMonitorButtonAction = {() -> Void in
-            
+           
             let vc = UIStoryboard.init(name: "Activity", bundle: Bundle.main).instantiateViewController(withIdentifier: "ActivityVC") as? ActivityVC
             self.navigationController?.pushViewController(vc!, animated: false)
             
         }
         tabBarView.onClickApplyButtonAction = {() -> Void in
+            
             let vc = UIStoryboard.init(name: "Apply", bundle: Bundle.main).instantiateViewController(withIdentifier: "ApplyVC") as? ApplyVC
             self.navigationController?.pushViewController(vc!, animated: false)
             
             
         }
         tabBarView.onClickProfileButtonAction = {() -> Void in
+            
             let vc = UIStoryboard.init(name: "Profile", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProfileVc") as? ProfileVc
             self.navigationController?.pushViewController(vc!, animated: false)
             

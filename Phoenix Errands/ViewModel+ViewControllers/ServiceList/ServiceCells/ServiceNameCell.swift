@@ -21,4 +21,7 @@ class ServiceNameCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func initializeCellDic(cellDic : ServiceListArray){
+        lblServiceNAme.text = cellDic.serviceName
+    }
 }

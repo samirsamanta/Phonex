@@ -28,6 +28,15 @@
 		38453E69230EA6060016374A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38453E68230EA6060016374A /* SettingsVC.swift */; };
 		38453E6C230EAFAE0016374A /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38453E6B230EAFAE0016374A /* ChangePasswordVC.swift */; };
 		6ACE46DBF913C50B4E83B5C3 /* Pods_Phoenix_Errands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F3E8A9DE4205D05DC65637 /* Pods_Phoenix_Errands.framework */; };
+		EF0C310D23194CBC00C42DA7 /* ProviderListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C310C23194CBC00C42DA7 /* ProviderListService.swift */; };
+		EF0C310F23194EAD00C42DA7 /* SkillListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C310E23194EAD00C42DA7 /* SkillListModel.swift */; };
+		EF0C31112319505B00C42DA7 /* ProviderSkillVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C31102319505B00C42DA7 /* ProviderSkillVM.swift */; };
+		EF1DDBCB231D0E780003EFBA /* IntroServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DDBCA231D0E780003EFBA /* IntroServices.swift */; };
+		EF1DDBCD231D0F180003EFBA /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DDBCC231D0F180003EFBA /* IntroModel.swift */; };
+		EF1DDBCF231D10350003EFBA /* IntroVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DDBCE231D10350003EFBA /* IntroVM.swift */; };
+		EF1DDBD1231D1F350003EFBA /* ContactServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DDBD0231D1F350003EFBA /* ContactServices.swift */; };
+		EF1DDBD3231D1FC20003EFBA /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DDBD2231D1FC20003EFBA /* ContactModel.swift */; };
+		EF1DDBD5231D20AA0003EFBA /* ContactVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DDBD4231D20AA0003EFBA /* ContactVM.swift */; };
 		EF44144522F9530100217BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44144422F9530100217BCA /* AppDelegate.swift */; };
 		EF44144722F9530100217BCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44144622F9530100217BCA /* ViewController.swift */; };
 		EF44144A22F9530100217BCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF44144822F9530100217BCA /* Main.storyboard */; };
@@ -55,6 +64,15 @@
 		EF4414AB22F9613400217BCA /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF4414A822F9613400217BCA /* Roboto-Bold.ttf */; };
 		EF4414AC22F9613400217BCA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF4414A922F9613400217BCA /* Roboto-Regular.ttf */; };
 		EF4414B122F9662700217BCA /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4414B022F9662700217BCA /* IntroVC.swift */; };
+		EF53DDA4231E4DED0094E60E /* QuestionAnswerSetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF53DDA3231E4DED0094E60E /* QuestionAnswerSetService.swift */; };
+		EF53DDA6231E4EAB0094E60E /* QuestionAnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF53DDA5231E4EAB0094E60E /* QuestionAnswerModel.swift */; };
+		EF53DDA8231E50810094E60E /* QuestionAnswerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF53DDA7231E50810094E60E /* QuestionAnswerVM.swift */; };
+		EF5BD73D2316942A000361C2 /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BD73C2316942A000361C2 /* SignInService.swift */; };
+		EF5BD73F231694B9000361C2 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BD73E231694B9000361C2 /* UserResponse.swift */; };
+		EF5BD741231695C5000361C2 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BD740231695C5000361C2 /* LoginVM.swift */; };
+		EF5BD7432316B663000361C2 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BD7422316B663000361C2 /* UserRegister.swift */; };
+		EF5BD7452316B82E000361C2 /* RegiterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BD7442316B82E000361C2 /* RegiterService.swift */; };
+		EF5BD7472316B8C0000361C2 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BD7462316B8C0000361C2 /* RegisterVM.swift */; };
 		EF6CFF8423028B4C00662CF3 /* ProfileVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CFF8223028B4C00662CF3 /* ProfileVc.swift */; };
 		EF6CFF8523028B4C00662CF3 /* ProfileDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CFF8323028B4C00662CF3 /* ProfileDetailsVC.swift */; };
 		EF6CFF8923028B9100662CF3 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CFF8723028B9100662CF3 /* ProfileCell.swift */; };
@@ -88,6 +106,14 @@
 		EF7ADEAB22FD9BDC008DADCB /* QuestionCheckBoxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7ADEA922FD9BDC008DADCB /* QuestionCheckBoxCell.xib */; };
 		EF7ADEAE22FDA28B008DADCB /* ServiceSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7ADEAD22FDA28B008DADCB /* ServiceSearchVC.swift */; };
 		EF7ADEB122FDA6BC008DADCB /* ThankYouVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7ADEB022FDA6BC008DADCB /* ThankYouVC.swift */; };
+		EF85E2DF2317E46000D12AD8 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85E2DE2317E46000D12AD8 /* CategoryService.swift */; };
+		EF85E2E12317E4E300D12AD8 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85E2E02317E4E300D12AD8 /* CategoryModel.swift */; };
+		EF85E2E32317E60C00D12AD8 /* CategoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85E2E22317E60C00D12AD8 /* CategoryVM.swift */; };
+		EF85E2E52317EAD600D12AD8 /* SubCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85E2E42317EAD600D12AD8 /* SubCategoryModel.swift */; };
+		EF85E2E72317EBBD00D12AD8 /* SubCategoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85E2E62317EBBD00D12AD8 /* SubCategoryVM.swift */; };
+		EF85E2E92317EEC300D12AD8 /* ServiceListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85E2E82317EEC200D12AD8 /* ServiceListService.swift */; };
+		EF85E2EB2317EFC200D12AD8 /* ServiceListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85E2EA2317EFC200D12AD8 /* ServiceListModel.swift */; };
+		EF85E2ED2317F17F00D12AD8 /* ServiceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85E2EC2317F17F00D12AD8 /* ServiceVM.swift */; };
 		EF87FF0C22FBF7DA0051DC8E /* RegisterPasswordCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87FF0A22FBF7DA0051DC8E /* RegisterPasswordCheckCell.swift */; };
 		EF87FF0D22FBF7DA0051DC8E /* RegisterPasswordCheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF87FF0B22FBF7DA0051DC8E /* RegisterPasswordCheckCell.xib */; };
 		EF87FF1D22FC05810051DC8E /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF87FF1422FC05800051DC8E /* HeaderView.xib */; };
@@ -165,6 +191,15 @@
 		80F3E8A9DE4205D05DC65637 /* Pods_Phoenix_Errands.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phoenix_Errands.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAE2B7BF5A39CE8320BC091 /* Pods-Phoenix ErrandsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phoenix ErrandsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phoenix ErrandsTests/Pods-Phoenix ErrandsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAD368B55545551C86591DD0 /* Pods-Phoenix Errands.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phoenix Errands.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands.debug.xcconfig"; sourceTree = "<group>"; };
+		EF0C310C23194CBC00C42DA7 /* ProviderListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderListService.swift; sourceTree = "<group>"; };
+		EF0C310E23194EAD00C42DA7 /* SkillListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListModel.swift; sourceTree = "<group>"; };
+		EF0C31102319505B00C42DA7 /* ProviderSkillVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderSkillVM.swift; sourceTree = "<group>"; };
+		EF1DDBCA231D0E780003EFBA /* IntroServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroServices.swift; sourceTree = "<group>"; };
+		EF1DDBCC231D0F180003EFBA /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
+		EF1DDBCE231D10350003EFBA /* IntroVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVM.swift; sourceTree = "<group>"; };
+		EF1DDBD0231D1F350003EFBA /* ContactServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactServices.swift; sourceTree = "<group>"; };
+		EF1DDBD2231D1FC20003EFBA /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		EF1DDBD4231D20AA0003EFBA /* ContactVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVM.swift; sourceTree = "<group>"; };
 		EF44144122F9530100217BCA /* Phoenix Errands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Phoenix Errands.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF44144422F9530100217BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF44144622F9530100217BCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +233,15 @@
 		EF4414A822F9613400217BCA /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		EF4414A922F9613400217BCA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		EF4414B022F9662700217BCA /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
+		EF53DDA3231E4DED0094E60E /* QuestionAnswerSetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerSetService.swift; sourceTree = "<group>"; };
+		EF53DDA5231E4EAB0094E60E /* QuestionAnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerModel.swift; sourceTree = "<group>"; };
+		EF53DDA7231E50810094E60E /* QuestionAnswerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerVM.swift; sourceTree = "<group>"; };
+		EF5BD73C2316942A000361C2 /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
+		EF5BD73E231694B9000361C2 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		EF5BD740231695C5000361C2 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		EF5BD7422316B663000361C2 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
+		EF5BD7442316B82E000361C2 /* RegiterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiterService.swift; sourceTree = "<group>"; };
+		EF5BD7462316B8C0000361C2 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
 		EF6CFF8223028B4C00662CF3 /* ProfileVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVc.swift; sourceTree = "<group>"; };
 		EF6CFF8323028B4C00662CF3 /* ProfileDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailsVC.swift; sourceTree = "<group>"; };
 		EF6CFF8723028B9100662CF3 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -233,6 +277,14 @@
 		EF7ADEA922FD9BDC008DADCB /* QuestionCheckBoxCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCheckBoxCell.xib; sourceTree = "<group>"; };
 		EF7ADEAD22FDA28B008DADCB /* ServiceSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchVC.swift; sourceTree = "<group>"; };
 		EF7ADEB022FDA6BC008DADCB /* ThankYouVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouVC.swift; sourceTree = "<group>"; };
+		EF85E2DE2317E46000D12AD8 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		EF85E2E02317E4E300D12AD8 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		EF85E2E22317E60C00D12AD8 /* CategoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVM.swift; sourceTree = "<group>"; };
+		EF85E2E42317EAD600D12AD8 /* SubCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryModel.swift; sourceTree = "<group>"; };
+		EF85E2E62317EBBD00D12AD8 /* SubCategoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryVM.swift; sourceTree = "<group>"; };
+		EF85E2E82317EEC200D12AD8 /* ServiceListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListService.swift; sourceTree = "<group>"; };
+		EF85E2EA2317EFC200D12AD8 /* ServiceListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListModel.swift; sourceTree = "<group>"; };
+		EF85E2EC2317F17F00D12AD8 /* ServiceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceVM.swift; sourceTree = "<group>"; };
 		EF87FF0A22FBF7DA0051DC8E /* RegisterPasswordCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordCheckCell.swift; sourceTree = "<group>"; };
 		EF87FF0B22FBF7DA0051DC8E /* RegisterPasswordCheckCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPasswordCheckCell.xib; sourceTree = "<group>"; };
 		EF87FF1422FC05800051DC8E /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -496,6 +548,15 @@
 			isa = PBXGroup;
 			children = (
 				380F32642315096A00E328DF /* UserModel.swift */,
+				EF5BD73E231694B9000361C2 /* UserResponse.swift */,
+				EF5BD7422316B663000361C2 /* UserRegister.swift */,
+				EF85E2E02317E4E300D12AD8 /* CategoryModel.swift */,
+				EF85E2E42317EAD600D12AD8 /* SubCategoryModel.swift */,
+				EF85E2EA2317EFC200D12AD8 /* ServiceListModel.swift */,
+				EF0C310E23194EAD00C42DA7 /* SkillListModel.swift */,
+				EF1DDBCC231D0F180003EFBA /* IntroModel.swift */,
+				EF1DDBD2231D1FC20003EFBA /* ContactModel.swift */,
+				EF53DDA5231E4EAB0094E60E /* QuestionAnswerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -604,18 +665,11 @@
 		EF44149622F95F4800217BCA /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
-				EF44149B22F95F9600217BCA /* APIServices */,
+				EF5BD73B2316941A000361C2 /* APIService */,
 				EF44149822F95F6A00217BCA /* APIConstants.swift */,
 				EF44149722F95F6A00217BCA /* Response.swift */,
 			);
 			path = APIClient;
-			sourceTree = "<group>";
-		};
-		EF44149B22F95F9600217BCA /* APIServices */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIServices;
 			sourceTree = "<group>";
 		};
 		EF44149C22F95FAA00217BCA /* AppExtensions */ = {
@@ -657,8 +711,24 @@
 			isa = PBXGroup;
 			children = (
 				EF4414B022F9662700217BCA /* IntroVC.swift */,
+				EF1DDBCE231D10350003EFBA /* IntroVM.swift */,
 			);
 			path = IntroScreens;
+			sourceTree = "<group>";
+		};
+		EF5BD73B2316941A000361C2 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				EF5BD73C2316942A000361C2 /* SignInService.swift */,
+				EF5BD7442316B82E000361C2 /* RegiterService.swift */,
+				EF85E2DE2317E46000D12AD8 /* CategoryService.swift */,
+				EF85E2E82317EEC200D12AD8 /* ServiceListService.swift */,
+				EF0C310C23194CBC00C42DA7 /* ProviderListService.swift */,
+				EF1DDBCA231D0E780003EFBA /* IntroServices.swift */,
+				EF1DDBD0231D1F350003EFBA /* ContactServices.swift */,
+				EF53DDA3231E4DED0094E60E /* QuestionAnswerSetService.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 		EF6CFF8123028B3600662CF3 /* Profile */ = {
@@ -749,6 +819,7 @@
 				EF6CFFB02302CEC500662CF3 /* AskForServiceVC */,
 				EF6CFFAD2302C7BF00662CF3 /* ContactPersonProfile */,
 				EF6CFFA223028D4300662CF3 /* ContactCollectionViewCewll */,
+				EF1DDBD4231D20AA0003EFBA /* ContactVM.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -790,6 +861,7 @@
 			children = (
 				EF7ADE8A22FD744A008DADCB /* TableCell */,
 				EF7ADE8822FD6F9B008DADCB /* ServiceTypeListVC.swift */,
+				EF85E2E62317EBBD00D12AD8 /* SubCategoryVM.swift */,
 			);
 			path = ServiceTypeList;
 			sourceTree = "<group>";
@@ -807,6 +879,7 @@
 			children = (
 				EF7ADE9022FD777F008DADCB /* ServiceCells */,
 				EF7ADE8E22FD7749008DADCB /* ServiceNameVC.swift */,
+				EF85E2EC2317F17F00D12AD8 /* ServiceVM.swift */,
 			);
 			path = ServiceList;
 			sourceTree = "<group>";
@@ -849,6 +922,7 @@
 			children = (
 				EF7ADE9F22FD8DFA008DADCB /* Cells */,
 				EF7ADE9D22FD8C9F008DADCB /* ProviderServiceList.swift */,
+				EF0C31102319505B00C42DA7 /* ProviderSkillVM.swift */,
 			);
 			path = ProviderServiceList;
 			sourceTree = "<group>";
@@ -865,6 +939,7 @@
 			isa = PBXGroup;
 			children = (
 				EF7ADEA322FD9995008DADCB /* ServiceQuestionAnswerVC.swift */,
+				EF53DDA7231E50810094E60E /* QuestionAnswerVM.swift */,
 				EF7ADEA522FD99FB008DADCB /* Cells */,
 			);
 			path = ServiceQuestionAnswer;
@@ -921,6 +996,7 @@
 			children = (
 				EF7ADE8422FD5539008DADCB /* Cells */,
 				EF891A8922FA9B3300E478B8 /* DashboardVC.swift */,
+				EF85E2E22317E60C00D12AD8 /* CategoryVM.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -939,6 +1015,7 @@
 			children = (
 				EF891A9322FAFB5D00E478B8 /* TableCells */,
 				EF891A9122FAF90100E478B8 /* LoginVC.swift */,
+				EF5BD740231695C5000361C2 /* LoginVM.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -956,6 +1033,7 @@
 			children = (
 				EF891A9922FB04AD00E478B8 /* TableCells */,
 				EF891A9722FB041200E478B8 /* RegisterVC.swift */,
+				EF5BD7462316B8C0000361C2 /* RegisterVM.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -1132,13 +1210,20 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4F0CB01B86AD8C8FF5A23E21 /* [CP] Check Pods Manifest.lock */ = {
@@ -1171,13 +1256,38 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Auk/Auk.framework",
+				"${BUILT_PRODUCTS_DIR}/HideShowPasswordTextField/HideShowPasswordTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${PODS_ROOT}/PayCardsRecognizer/Source/PayCardsRecognizer.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/moa/moa.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HideShowPasswordTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayCardsRecognizer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/moa.framework",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		72D69E7CC773FECFDD5786CF /* [CP] Check Pods Manifest.lock */ = {
@@ -1232,62 +1342,87 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7ADE9B22FD8541008DADCB /* PostalCodeVC.swift in Sources */,
+				EF85E2E92317EEC300D12AD8 /* ServiceListService.swift in Sources */,
+				EF85E2EB2317EFC200D12AD8 /* ServiceListModel.swift in Sources */,
 				EF7ADEA422FD9995008DADCB /* ServiceQuestionAnswerVC.swift in Sources */,
 				38453E66230E98920016374A /* WereGoingVC.swift in Sources */,
 				EF6CFFB22302CED900662CF3 /* AskForServiceVC.swift in Sources */,
 				EF87FF0C22FBF7DA0051DC8E /* RegisterPasswordCheckCell.swift in Sources */,
+				EF1DDBCF231D10350003EFBA /* IntroVM.swift in Sources */,
 				EF6CFF8923028B9100662CF3 /* ProfileCell.swift in Sources */,
 				EF7ADEA722FD9A23008DADCB /* ServiceQuestionAnswerCell.swift in Sources */,
 				EF7ADE9522FD7D73008DADCB /* AskForServiceOrProvder.swift in Sources */,
+				EF1DDBCD231D0F180003EFBA /* IntroModel.swift in Sources */,
 				38018184230AC8B2009A2DAB /* AddServiceVC.swift in Sources */,
 				EF44144D22F9530100217BCA /* Phoenix_Errands.xcdatamodeld in Sources */,
 				EF87FF2722FC24490051DC8E /* TabBarView.swift in Sources */,
+				EF85E2E72317EBBD00D12AD8 /* SubCategoryVM.swift in Sources */,
+				EF1DDBCB231D0E780003EFBA /* IntroServices.swift in Sources */,
 				38453E69230EA6060016374A /* SettingsVC.swift in Sources */,
 				EF891A9B22FB04E500E478B8 /* RegisterHeaderCell.swift in Sources */,
 				EF4414B122F9662700217BCA /* IntroVC.swift in Sources */,
 				EF6CFF9823028CB400662CF3 /* NewRequestDetailsVC.swift in Sources */,
 				EF891A9222FAF90100E478B8 /* LoginVC.swift in Sources */,
 				EF6CFF9623028CA500662CF3 /* RequestDetailsVC.swift in Sources */,
+				EF5BD741231695C5000361C2 /* LoginVM.swift in Sources */,
 				EF7ADE8922FD6F9B008DADCB /* ServiceTypeListVC.swift in Sources */,
 				EF6CFFAC23028E3100662CF3 /* IQDropDownTextField.m in Sources */,
 				38018151230A6DD5009A2DAB /* DiscoverCell.swift in Sources */,
 				38453E60230E5D890016374A /* AddCardVC.swift in Sources */,
 				EF6CFF8523028B4C00662CF3 /* ProfileDetailsVC.swift in Sources */,
 				EF87FF2122FC05810051DC8E /* BaseViewController.swift in Sources */,
+				EF53DDA6231E4EAB0094E60E /* QuestionAnswerModel.swift in Sources */,
 				EF44148D22F95E4800217BCA /* kTextFiledPlaceHolder.swift in Sources */,
 				EF44148A22F95E4800217BCA /* HelperClass.swift in Sources */,
+				EF5BD73F231694B9000361C2 /* UserResponse.swift in Sources */,
 				EF44149422F95F1500217BCA /* AppConstants.swift in Sources */,
 				3805FEC72303E14700FFBE16 /* ActivityVC.swift in Sources */,
 				EF891A9822FB041200E478B8 /* RegisterVC.swift in Sources */,
 				EF6CFF9F23028D0900662CF3 /* ApplyCell.swift in Sources */,
 				EF7ADEA122FD8E17008DADCB /* ProviderServiceCell.swift in Sources */,
+				EF1DDBD3231D1FC20003EFBA /* ContactModel.swift in Sources */,
 				EF44144722F9530100217BCA /* ViewController.swift in Sources */,
+				EF85E2E32317E60C00D12AD8 /* CategoryVM.swift in Sources */,
+				EF5BD7432316B663000361C2 /* UserRegister.swift in Sources */,
 				EF44148522F95DFF00217BCA /* Reachability.swift in Sources */,
 				EF4414A022F95FC400217BCA /* UIKitExtensions.swift in Sources */,
 				EF44149922F95F6A00217BCA /* Response.swift in Sources */,
 				EF7ADEAA22FD9BDC008DADCB /* QuestionCheckBoxCell.swift in Sources */,
 				EF7ADEB122FDA6BC008DADCB /* ThankYouVC.swift in Sources */,
+				EF85E2DF2317E46000D12AD8 /* CategoryService.swift in Sources */,
 				EF7ADE8C22FD746D008DADCB /* ServiceTypeListCell.swift in Sources */,
 				EF891A9522FAFB7F00E478B8 /* LoginHeaderCell.swift in Sources */,
+				EF0C310D23194CBC00C42DA7 /* ProviderListService.swift in Sources */,
 				EF7ADE8622FD555E008DADCB /* ServiceCollectionCell.swift in Sources */,
+				EF5BD73D2316942A000361C2 /* SignInService.swift in Sources */,
 				EF7ADE9222FD77A8008DADCB /* ServiceNameCell.swift in Sources */,
 				EF44149522F95F1500217BCA /* AppStrings.swift in Sources */,
 				3801814C230A6D1C009A2DAB /* DiscoverVC.swift in Sources */,
 				380F32652315096A00E328DF /* UserModel.swift in Sources */,
 				EF6CFF8423028B4C00662CF3 /* ProfileVc.swift in Sources */,
 				EF44149A22F95F6A00217BCA /* APIConstants.swift in Sources */,
+				EF85E2ED2317F17F00D12AD8 /* ServiceVM.swift in Sources */,
+				EF53DDA8231E50810094E60E /* QuestionAnswerVM.swift in Sources */,
 				EF6CFFAF2302C7E100662CF3 /* ContactPersonProfileVC.swift in Sources */,
+				EF0C31112319505B00C42DA7 /* ProviderSkillVM.swift in Sources */,
 				EF7ADE9822FD7F63008DADCB /* AskServiceProviderCell.swift in Sources */,
+				EF5BD7472316B8C0000361C2 /* RegisterVM.swift in Sources */,
+				EF0C310F23194EAD00C42DA7 /* SkillListModel.swift in Sources */,
 				EF44148C22F95E4800217BCA /* iOSDevCenters+GIF.swift in Sources */,
 				EF44148222F95DCB00217BCA /* Enums.swift in Sources */,
 				EF891A8A22FA9B3300E478B8 /* DashboardVC.swift in Sources */,
+				EF1DDBD1231D1F350003EFBA /* ContactServices.swift in Sources */,
 				EF6CFF9C23028CF600662CF3 /* ApplyVC.swift in Sources */,
 				EF6CFFA423028D5200662CF3 /* ContactsVC.swift in Sources */,
+				EF1DDBD5231D20AA0003EFBA /* ContactVM.swift in Sources */,
 				38453E6C230EAFAE0016374A /* ChangePasswordVC.swift in Sources */,
 				EF891A8F22FAEE8D00E478B8 /* HomeCell.swift in Sources */,
 				38453E63230E65460016374A /* ScannCardVC.swift in Sources */,
+				EF85E2E52317EAD600D12AD8 /* SubCategoryModel.swift in Sources */,
 				EF6CFF9423028C9300662CF3 /* RequestCell.swift in Sources */,
 				EF7ADE8F22FD7749008DADCB /* ServiceNameVC.swift in Sources */,
+				EF53DDA4231E4DED0094E60E /* QuestionAnswerSetService.swift in Sources */,
+				EF5BD7452316B82E000361C2 /* RegiterService.swift in Sources */,
 				EF44149F22F95FC400217BCA /* FoundationExtensions.swift in Sources */,
 				EF87FF2322FC05810051DC8E /* HeaderView.swift in Sources */,
 				EF44147E22F95D9A00217BCA /* CustomLoaderView.swift in Sources */,
@@ -1297,6 +1432,7 @@
 				38018187230AD1E5009A2DAB /* AddPaymentVC.swift in Sources */,
 				EF44144522F9530100217BCA /* AppDelegate.swift in Sources */,
 				EF7ADEAE22FDA28B008DADCB /* ServiceSearchVC.swift in Sources */,
+				EF85E2E12317E4E300D12AD8 /* CategoryModel.swift in Sources */,
 				EF7ADE9E22FD8C9F008DADCB /* ProviderServiceList.swift in Sources */,
 				EF6CFFA623028D5900662CF3 /* ContactCollectionViewCell.swift in Sources */,
 			);
@@ -1457,7 +1593,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shyam Future Tech LLP (WN6L8CACLD)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1519,7 +1655,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shyam Future Tech LLP (WN6L8CACLD)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1548,7 +1684,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shyam Future Tech LLP (WN6L8CACLD)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = WN6L8CACLD;
 				INFOPLIST_FILE = "Phoenix Errands/Info.plist";
@@ -1557,9 +1693,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eLearningApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PhoenixErrands;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ShyamFutureDevelopmentProvissioning;
+				PROVISIONING_PROFILE_SPECIFIER = PhoenixErrandAdHoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "Phoenix Errands/Others/HelperClasses/Lib/IQTextField/Phoenix Errands-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1573,7 +1709,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shyam Future Tech LLP (WN6L8CACLD)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = WN6L8CACLD;
 				INFOPLIST_FILE = "Phoenix Errands/Info.plist";
@@ -1582,9 +1718,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eLearningApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PhoenixErrands;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ShyamFutureDevelopmentProvissioning;
+				PROVISIONING_PROFILE_SPECIFIER = PhoenixErrandAdHoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "Phoenix Errands/Others/HelperClasses/Lib/IQTextField/Phoenix Errands-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

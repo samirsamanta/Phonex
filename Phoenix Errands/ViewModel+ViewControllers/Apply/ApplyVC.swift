@@ -37,6 +37,13 @@ class ApplyVC: BaseViewController
     }
     @objc func setText()
     {
+        self.tabBarView.lblHome.textColor = UIColor.lightGray
+        self.tabBarView.lblMe.textColor = UIColor.lightGray
+        self.tabBarView.lblApply.textColor = UIColor.black
+        self.tabBarView.lblActivity.textColor = UIColor.lightGray
+        self.tabBarView.lblContacts.textColor = UIColor.lightGray
+        self.tabBarView.lblApply.font = UIFont.boldSystemFont(ofSize: 14.0)
+        self.tabBarView.menuApplyImg.image = UIImage(named:"DarkApply")
         lblComplete.text = "Complete your information to apply for mission".localized();
         btnMySkill.setTitle("My skills".localized(), for: UIControl.State.normal)
         headerView.lblHeaderTitle.text = "Apply".localized();

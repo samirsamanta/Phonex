@@ -12,17 +12,20 @@ class LoginHeaderCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
+    
     @IBAction func btnFacebookAction(_ sender: Any) {
+        
     }
+    
     @IBAction func btnGoogleAction(_ sender: Any) {
+        
     }
 }
 
@@ -37,9 +40,15 @@ class LoginEmailPasswordCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
+    
+    func initializeCellObject(cellDic : UserModel){
+        self.txtFieldEmail.text = cellDic.userName
+         self.txtFieldPassword.text = cellDic.userPassword
+    }
+    
     @IBAction func buttonForgotPasswordAction(_ sender: Any) {
+        
     }
 }

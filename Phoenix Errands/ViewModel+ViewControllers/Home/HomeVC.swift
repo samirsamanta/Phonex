@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setText()
+        //self.setText()
 
         self.formTableView.delegate = self
         self.formTableView.dataSource = self
@@ -49,6 +49,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func btnCloseAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
         
     }
     func registerWithEmailButtonAction(){

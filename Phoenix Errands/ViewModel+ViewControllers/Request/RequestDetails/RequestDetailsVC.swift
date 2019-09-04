@@ -58,10 +58,11 @@ class RequestDetailsVC: BaseViewController {
     }
     @IBAction func btnApplyTapped(_ sender: Any)
     {
-//        let vc = UIStoryboard.init(name: "Profile", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProfileVc") as? ProfileVc
-//        self.navigationController?.pushViewController(vc!, animated: true)
+        let vc = UIStoryboard.init(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "AskForServiceOrProvder") as? AskForServiceOrProvder
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
 }
+
 extension RequestDetailsVC : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

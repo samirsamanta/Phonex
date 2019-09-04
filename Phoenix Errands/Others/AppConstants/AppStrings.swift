@@ -14,7 +14,7 @@ let noText = "No"
 let okText = "OK"
 
 // Alert Related Texts
-let commonAlertTitle = "MUC"
+let commonAlertTitle = "Phoenix Errands"
 let paymentAlertTitle = "Payment"
 let successAlertTitle = "Success"
 let errorAlertTitle = "Error"
@@ -77,6 +77,9 @@ let shouldEnterTheLastName = "Please enter last name."
 let shouldEnterTheEmailName = "Please enter user email."
 let shouldEnterTheMedicationMessage = "Please enter medication message."
 let shouldEnterThePassword = "Please enter user password."
+let shouldThePasswordEight = "Password should be minimum 8 character."
+let shouldThePasswordNumber = "Password must contain a number or a special character "
+let shouldThePasswordCapitalLatter = "Password must contain a capital alphabet"
 let shouldSelectAnySpeciality = "Please Select any Speciality."
 
 let shouldEnterTheContactEmail = "Please enter email."

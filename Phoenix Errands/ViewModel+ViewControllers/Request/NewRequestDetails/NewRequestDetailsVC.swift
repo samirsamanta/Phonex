@@ -61,6 +61,11 @@ class NewRequestDetailsVC: BaseViewController
 //        self.navigationController?.pushViewController(vc!, animated: true)
         
     }
+    @IBAction func btnApplySerivce(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "AskForServiceOrProvder") as? AskForServiceOrProvder
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
     
 }
 extension NewRequestDetailsVC : UITableViewDelegate, UITableViewDataSource {

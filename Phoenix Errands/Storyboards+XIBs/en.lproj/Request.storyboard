@@ -766,6 +766,9 @@
                                                 <state key="normal" title="Apply">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnApplySerivce:" destination="uJd-V8-6Kh" eventType="touchUpInside" id="04b-Zd-XUj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.98431372549999996" green="0.69803921570000005" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

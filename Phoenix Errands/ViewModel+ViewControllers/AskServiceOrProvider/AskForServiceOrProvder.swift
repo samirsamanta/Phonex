@@ -13,6 +13,8 @@ class AskForServiceOrProvder: BaseViewController {
     var optionArray : NSArray?
     @IBOutlet weak var tableSelectServiceOrProvide: UITableView!
     @IBOutlet weak var lblOptionName: UILabel!
+    var isProvider : Bool = false
+    var serviceID : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +46,7 @@ extension AskForServiceOrProvder : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let Cell = tableView.dequeueReusableCell(withIdentifier: "AskServiceProviderCell") as! AskServiceProviderCell
+        Cell.initializeCellDetails(indexPath: indexPath.row, isProvider: isProvider)
         Cell.lblOptionName.text = (optionArray![indexPath.row] as! String)
         return Cell
     }
@@ -54,10 +57,18 @@ extension AskForServiceOrProvder : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            isProvider = false
+            self.tableSelectServiceOrProvide.reloadData()
             let vc = UIStoryboard.init(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "PostalCodeVC") as? PostalCodeVC
+            vc!.serviceID = serviceID
+            vc!.isprovider = false
             self.navigationController?.pushViewController(vc!, animated: true)
         }else{
+            isProvider = true
+            self.tableSelectServiceOrProvide.reloadData()
             let vc = UIStoryboard.init(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProviderServiceList") as? ProviderServiceList
+            vc!.serviceID = serviceID
+            vc!.isprovider = true
             self.navigationController?.pushViewController(vc!, animated: true)
         }
     }

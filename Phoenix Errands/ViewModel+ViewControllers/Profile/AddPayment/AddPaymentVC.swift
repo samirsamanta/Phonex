@@ -24,7 +24,7 @@ class AddPaymentVC: UIViewController
         imgThumb.clipsToBounds = true
         imgThumb.layer.borderColor = UIColor(red:17/255, green:136/255, blue:255/255, alpha: 1).cgColor
         imgThumb.layer.borderWidth = 1
-        setText()
+        //setText()
 
     }
     @IBAction func addPaymentTapped(_ sender: Any)

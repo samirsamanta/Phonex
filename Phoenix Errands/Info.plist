@@ -14,14 +14,19 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Scan your card</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0</string>
+	<string>3.4</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>3.4</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Scan your card</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>By accessing your location, this app can find you a good place.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
