@@ -8,6 +8,9 @@
 
 import UIKit
 import Localize_Swift
+import FacebookLogin
+import FBSDKLoginKit
+import GoogleSignIn
 //EEF3F7
 class HomeVC: UIViewController {
 
@@ -20,6 +23,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var formTableView: UITableView!
     var actionSheet: UIAlertController!
     let availableLanguages = Localize.availableLanguages()
+    var fbdataDict = [String:Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,8 @@ class HomeVC: UIViewController {
 
         self.formTableView.delegate = self
         self.formTableView.dataSource = self
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,6 +68,51 @@ class HomeVC: UIViewController {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
         self.navigationController?.pushViewController(vc!, animated: true)
     }
+    func registerWithGmailAction()
+    {
+        GIDSignIn.sharedInstance().clientID = "321505110953-rrdi1bhiec35e9usncs01si24sdoh67j.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().signIn()
+    }
+    func registerWithFaceBookAction(){
+        let fbLoginManager : LoginManager = LoginManager()
+        fbLoginManager.loginBehavior = LoginBehavior.browser
+        fbLoginManager.logOut()
+        fbLoginManager.logIn(permissions: ["public_profile","email"], from: self) { (result, error) -> Void in
+            if error != nil {
+                self.dismiss(animated: true, completion: nil)
+            }
+            else if (result?.isCancelled)! {
+                self.dismiss(animated: true, completion: nil)
+            }
+            else
+            {
+                self.getFBUserData()
+            }
+        }
+    }
+    func getFBUserData()
+    {
+        GraphRequest(graphPath: "me?fields", parameters: ["fields": "id, name , first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+            if (error == nil){
+                let fbDetails = result as! NSDictionary
+                self.fbdataDict = fbDetails as! [String : Any]
+                print("fbdataDict==>\(self.fbdataDict)")
+                print("first_name==>\(self.fbdataDict["first_name"] as! String)")
+//                let params = UserRegistration()
+//                params.FirstName = (self.fbdataDict["first_name"] as! String)
+//                params.LastName = (self.fbdataDict["last_name"] as! String)
+//                params.EmailID = (self.fbdataDict["email"] as! String)
+//                params.SocialID = (self.fbdataDict["id"] as! String)
+//                params.FcmToken = AppPreferenceService.getString(PreferencesKeys.FCMTokenDeviceID)
+//                params.SocialType = "Facebook"
+                //self.googleSignInViewModel.sendSocialUserSignUpCredentialsToAPIService(user: params)
+            }
+            else{
+                print(error?.localizedDescription ?? "Not found")
+            }
+        })
+    }
+    
 }
 extension HomeVC : UITableViewDelegate, UITableViewDataSource,HomePageDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -101,6 +152,41 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource,HomePageDelegate {
             return 222
         default:
             return 0
+        }
+    }
+}
+
+extension HomeVC : GIDSignInDelegate, GIDSignInUIDelegate
+{
+    private func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+        //UIActivityIndicatorView.stopAnimating()
+    }
+    
+    // Present a view that prompts the user to sign in with Google
+    func sign(_ signIn: GIDSignIn!,
+              present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    func sign(_ signIn: GIDSignIn!,
+              dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+        if let error = error {
+            print("Error\(error.localizedDescription)")
+        } else {
+            // Perform any operations on signed in user here.
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
+            print("email==>\(email)")
+            //googleSignInViewModel.sendSocialUserSignUpCredentialsToAPIService(user: registerObj)
         }
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 protocol HomePageDelegate {
     func alreadyRegisterButtonAction()
     func registerWithEmailButtonAction()
+    func registerWithGmailAction()
+    func registerWithFaceBookAction()
 }
 
 class HomeCell: UITableViewCell {
@@ -67,10 +69,14 @@ class LoginButtonCell: UITableViewCell {
         self.alreadyBtnDelegate?.alreadyRegisterButtonAction()
     }
     
-    @IBAction func btnFacebookAction(_ sender: Any) {
+    @IBAction func btnFacebookAction(_ sender: Any)
+    {
+        self.alreadyBtnDelegate?.registerWithFaceBookAction()
     }
     
-    @IBAction func btnGoogleAction(_ sender: Any) {
+    @IBAction func btnGoogleAction(_ sender: Any)
+    {
+        self.alreadyBtnDelegate?.registerWithGmailAction()
     }
     
 }

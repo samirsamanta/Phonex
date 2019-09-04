@@ -7,7 +7,12 @@
 //
 
 import UIKit
-class LoginVC: UIViewController {
+import FacebookLogin
+import FBSDKLoginKit
+import GoogleSignIn
+
+class LoginVC: UIViewController
+{
     @IBOutlet weak var loginTableView: UITableView!
     var userObject = UserModel()
     
@@ -15,6 +20,8 @@ class LoginVC: UIViewController {
         return LoginVM()
     }()
     var userDetails = UserResponse()
+    var fbdataDict = [String:Any]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loginTableView.delegate = self
@@ -22,7 +29,7 @@ class LoginVC: UIViewController {
         self.initializeViewModel()
         userObject.userName = "samir1104@gmail.com"
         userObject.userPassword = "Samir1103@1qaz"
-        print(" login check")
+        print("login check")
     }
     
     @IBAction func btnCloseAction(_ sender: Any) {
@@ -36,6 +43,51 @@ class LoginVC: UIViewController {
     @IBAction func buttonLoginSubmitAction(_ sender: Any) {
         userObject.userFCMToken = ""
         viewModel.sendLoginCredentialsToAPIService(user: userObject)
+    }
+    func logInWithGmailAction() {
+        GIDSignIn.sharedInstance().clientID = "321505110953-rrdi1bhiec35e9usncs01si24sdoh67j.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func logInWithFaceBookAction()
+    {
+        let fbLoginManager : LoginManager = LoginManager()
+        fbLoginManager.loginBehavior = LoginBehavior.browser
+        fbLoginManager.logOut()
+        fbLoginManager.logIn(permissions: ["public_profile","email"], from: self) { (result, error) -> Void in
+            if error != nil {
+                self.dismiss(animated: true, completion: nil)
+            }
+            else if (result?.isCancelled)! {
+                self.dismiss(animated: true, completion: nil)
+            }
+            else
+            {
+                self.getFBUserData()
+            }
+        }
+    }
+    func getFBUserData()
+    {
+        GraphRequest(graphPath: "me?fields", parameters: ["fields": "id, name , first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+            if (error == nil){
+                let fbDetails = result as! NSDictionary
+                self.fbdataDict = fbDetails as! [String : Any]
+                print("fbdataDict==>\(self.fbdataDict)")
+                print("first_name==>\(self.fbdataDict["first_name"] as! String)")
+                //                let params = UserRegistration()
+                //                params.FirstName = (self.fbdataDict["first_name"] as! String)
+                //                params.LastName = (self.fbdataDict["last_name"] as! String)
+                //                params.EmailID = (self.fbdataDict["email"] as! String)
+                //                params.SocialID = (self.fbdataDict["id"] as! String)
+                //                params.FcmToken = AppPreferenceService.getString(PreferencesKeys.FCMTokenDeviceID)
+                //                params.SocialType = "Facebook"
+                //self.googleSignInViewModel.sendSocialUserSignUpCredentialsToAPIService(user: params)
+            }
+            else{
+                print(error?.localizedDescription ?? "Not found")
+            }
+        })
     }
     
     func initializeViewModel() {
@@ -80,7 +132,7 @@ class LoginVC: UIViewController {
     }
 }
 
-extension LoginVC : UITableViewDelegate, UITableViewDataSource {
+extension LoginVC : UITableViewDelegate, UITableViewDataSource, LoginDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -94,6 +146,7 @@ extension LoginVC : UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let Cell = tableView.dequeueReusableCell(withIdentifier: "LoginHeaderCell") as! LoginHeaderCell
+            Cell.btnDelegate = self
             return Cell
         case 1:
             let Cell = tableView.dequeueReusableCell(withIdentifier: "LoginEmailPasswordCell") as! LoginEmailPasswordCell
@@ -149,5 +202,39 @@ extension LoginVC: UITextFieldDelegate {
             break
         }
         return true
+    }
+}
+extension LoginVC : GIDSignInDelegate, GIDSignInUIDelegate
+{
+    private func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+        //UIActivityIndicatorView.stopAnimating()
+    }
+    
+    // Present a view that prompts the user to sign in with Google
+    func sign(_ signIn: GIDSignIn!,
+              present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    func sign(_ signIn: GIDSignIn!,
+              dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+        if let error = error {
+            print("Error\(error.localizedDescription)")
+        } else {
+            // Perform any operations on signed in user here.
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
+            print("email==>\(email)")
+            //googleSignInViewModel.sendSocialUserSignUpCredentialsToAPIService(user: registerObj)
+        }
     }
 }

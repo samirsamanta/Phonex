@@ -22,6 +22,7 @@
 		38018187230AD1E5009A2DAB /* AddPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38018186230AD1E5009A2DAB /* AddPaymentVC.swift */; };
 		3805FEC72303E14700FFBE16 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3805FEC62303E14700FFBE16 /* ActivityVC.swift */; };
 		380F32652315096A00E328DF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380F32642315096A00E328DF /* UserModel.swift */; };
+		380F97EE231FC5710005A842 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380F97ED231FC5710005A842 /* GoogleService-Info.plist */; };
 		38453E60230E5D890016374A /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38453E5F230E5D890016374A /* AddCardVC.swift */; };
 		38453E63230E65460016374A /* ScannCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38453E62230E65460016374A /* ScannCardVC.swift */; };
 		38453E66230E98920016374A /* WereGoingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38453E65230E98920016374A /* WereGoingVC.swift */; };
@@ -181,6 +182,7 @@
 		38018186230AD1E5009A2DAB /* AddPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentVC.swift; sourceTree = "<group>"; };
 		3805FEC62303E14700FFBE16 /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
 		380F32642315096A00E328DF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		380F97ED231FC5710005A842 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38453E5F230E5D890016374A /* AddCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
 		38453E62230E65460016374A /* ScannCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannCardVC.swift; sourceTree = "<group>"; };
 		38453E65230E98920016374A /* WereGoingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WereGoingVC.swift; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 				EF44147522F95D2F00217BCA /* ViewModel+ViewControllers */,
 				EF44144622F9530100217BCA /* ViewController.swift */,
 				EF44145322F9530300217BCA /* Info.plist */,
+				380F97ED231FC5710005A842 /* GoogleService-Info.plist */,
 				EF44144B22F9530100217BCA /* Phoenix_Errands.xcdatamodeld */,
 			);
 			path = "Phoenix Errands";
@@ -1167,6 +1170,7 @@
 			files = (
 				EF4414AB22F9613400217BCA /* Roboto-Bold.ttf in Resources */,
 				38018170230AAAB7009A2DAB /* Dashboard.storyboard in Resources */,
+				380F97EE231FC5710005A842 /* GoogleService-Info.plist in Resources */,
 				38018155230A7E58009A2DAB /* Localizable.strings in Resources */,
 				EF44145222F9530300217BCA /* LaunchScreen.storyboard in Resources */,
 				EF87FF1D22FC05810051DC8E /* HeaderView.xib in Resources */,
@@ -1217,20 +1221,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4F0CB01B86AD8C8FF5A23E21 /* [CP] Check Pods Manifest.lock */ = {
@@ -1263,38 +1260,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Auk/Auk.framework",
-				"${BUILT_PRODUCTS_DIR}/HideShowPasswordTextField/HideShowPasswordTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${PODS_ROOT}/PayCardsRecognizer/Source/PayCardsRecognizer.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/moa/moa.framework",
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auk.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HideShowPasswordTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayCardsRecognizer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/moa.framework",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		72D69E7CC773FECFDD5786CF /* [CP] Check Pods Manifest.lock */ = {

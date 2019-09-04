@@ -7,9 +7,14 @@
 //
 
 import UIKit
+protocol LoginDelegate {
+    func logInWithGmailAction()
+    func logInWithFaceBookAction()
+}
 
 class LoginHeaderCell: UITableViewCell {
 
+    var btnDelegate : LoginDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -21,11 +26,11 @@ class LoginHeaderCell: UITableViewCell {
     }
     
     @IBAction func btnFacebookAction(_ sender: Any) {
-        
+        self.btnDelegate?.logInWithFaceBookAction()
     }
     
     @IBAction func btnGoogleAction(_ sender: Any) {
-        
+        self.btnDelegate?.logInWithGmailAction()
     }
 }
 

@@ -8,8 +8,15 @@
 
 import UIKit
 
-class RegisterHeaderCell: UITableViewCell {
+protocol RegisterDelegate
+{
+    func registerWithGmailAction()
+    func registerWithFaceBookAction()
+}
 
+class RegisterHeaderCell: UITableViewCell
+{
+    var btnDelegate : RegisterDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,9 +27,13 @@ class RegisterHeaderCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBAction func btnFacebookAction(_ sender: Any) {
+    @IBAction func btnFacebookAction(_ sender: Any)
+    {
+        self.btnDelegate?.registerWithFaceBookAction()
     }
-    @IBAction func btnGoogleAction(_ sender: Any) {
+    @IBAction func btnGoogleAction(_ sender: Any)
+    {
+        self.btnDelegate?.registerWithGmailAction()
     }
 }
 

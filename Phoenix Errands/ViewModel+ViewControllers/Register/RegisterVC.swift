@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FacebookLogin
+import FBSDKLoginKit
+import GoogleSignIn
 
 class RegisterVC: UIViewController {
 
@@ -18,6 +21,7 @@ class RegisterVC: UIViewController {
         return RegisterVM()
     }()
     var userDetails = UserResponse()
+    var fbdataDict = [String:Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,54 @@ class RegisterVC: UIViewController {
         registerObject.userPhone = ""
         registerObject.userFCMToken = ""
         viewModel.sendRegisterCredentialsToAPIService(user : registerObject)
+    }
+    
+    func registerWithGmailAction()
+    {
+        GIDSignIn.sharedInstance().clientID = "321505110953-rrdi1bhiec35e9usncs01si24sdoh67j.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func registerWithFaceBookAction()
+    {
+        let fbLoginManager : LoginManager = LoginManager()
+        fbLoginManager.loginBehavior = LoginBehavior.browser
+        fbLoginManager.logOut()
+        fbLoginManager.logIn(permissions: ["public_profile","email"], from: self) { (result, error) -> Void in
+            if error != nil {
+                self.dismiss(animated: true, completion: nil)
+            }
+            else if (result?.isCancelled)! {
+                self.dismiss(animated: true, completion: nil)
+            }
+            else
+            {
+                self.getFBUserData()
+            }
+        }
+    }
+    
+    func getFBUserData()
+    {
+        GraphRequest(graphPath: "me?fields", parameters: ["fields": "id, name , first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+            if (error == nil){
+                let fbDetails = result as! NSDictionary
+                self.fbdataDict = fbDetails as! [String : Any]
+                print("fbdataDict==>\(self.fbdataDict)")
+                print("first_name==>\(self.fbdataDict["first_name"] as! String)")
+                //                let params = UserRegistration()
+                //                params.FirstName = (self.fbdataDict["first_name"] as! String)
+                //                params.LastName = (self.fbdataDict["last_name"] as! String)
+                //                params.EmailID = (self.fbdataDict["email"] as! String)
+                //                params.SocialID = (self.fbdataDict["id"] as! String)
+                //                params.FcmToken = AppPreferenceService.getString(PreferencesKeys.FCMTokenDeviceID)
+                //                params.SocialType = "Facebook"
+                //self.googleSignInViewModel.sendSocialUserSignUpCredentialsToAPIService(user: params)
+            }
+            else{
+                print(error?.localizedDescription ?? "Not found")
+            }
+        })
     }
     
     func initializeViewModel() {
@@ -84,7 +136,7 @@ class RegisterVC: UIViewController {
     }
 }
 
-extension RegisterVC : UITableViewDelegate, UITableViewDataSource {
+extension RegisterVC : UITableViewDelegate, UITableViewDataSource, RegisterDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -99,6 +151,7 @@ extension RegisterVC : UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let Cell = tableView.dequeueReusableCell(withIdentifier: "RegisterHeaderCell") as! RegisterHeaderCell
+            Cell.btnDelegate = self
             return Cell
         case 1...4:
             let Cell = tableView.dequeueReusableCell(withIdentifier: "RegisterFieldCell") as! RegisterFieldCell

@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Thread.sleep(forTimeInterval: 2.0)
         GMSServices.provideAPIKey(googleApiKey)
+        
+        //GIDSignIn.sharedInstance().clientID = "321505110953-rrdi1bhiec35e9usncs01si24sdoh67j.apps.googleusercontent.com"
         return true
     }
 
