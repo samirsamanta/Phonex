@@ -40,6 +40,9 @@ class ServiceQuestionAnswerVC: BaseViewController {
         self.questionAnswerTable.dataSource = self
         self.optionArray = ["I want to find a provider quickly" , "I'm looking for quotes for a service that will take place later", "I'm testing Stootie to understand how it works"]
         self.questionAnswerTable.register(UINib(nibName: "QuestionCheckBoxCell", bundle: Bundle.main), forCellReuseIdentifier: "QuestionCheckBoxCell")
+        
+        self.questionAnswerTable.register(UINib(nibName: "TextBoxCell", bundle: Bundle.main), forCellReuseIdentifier: "TextBoxCell")
+        
         self.initializeViewModel()
         self.getQuestionSetDetails()
     }
@@ -149,17 +152,16 @@ extension ServiceQuestionAnswerVC : UITableViewDelegate, UITableViewDataSource {
                 return 0
             }
         }
-        
     }
     
-    //"leftmenu-icon-messages.png"
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isprovider == true {
             let data = questionSetProviderArr![cellValue].array_answer
             let array = data!.components(separatedBy: ",")
             if questionSetProviderArr![cellValue].type == "text" {
-                let Cell = tableView.dequeueReusableCell(withIdentifier: "ServiceQuestionAnswerCell") as! ServiceQuestionAnswerCell
-                Cell.lblQuestionName.text = array[indexPath.row]
+                let Cell = tableView.dequeueReusableCell(withIdentifier: "TextBoxCell") as! TextBoxCell
+                
                 return Cell
             }else if questionSetProviderArr![cellValue].type == "checkbox" {
                 let Cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCheckBoxCell") as! QuestionCheckBoxCell
@@ -167,7 +169,7 @@ extension ServiceQuestionAnswerVC : UITableViewDelegate, UITableViewDataSource {
                 return Cell
             }else if questionSetProviderArr![cellValue].type == "radio" {
                 
-                let Cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCheckBoxCell") as! QuestionCheckBoxCell
+                let Cell = tableView.dequeueReusableCell(withIdentifier: "ServiceQuestionAnswerCell") as! ServiceQuestionAnswerCell
                 Cell.lblQuestionName.text = array[indexPath.row]
                 return Cell
                 
@@ -187,8 +189,7 @@ extension ServiceQuestionAnswerVC : UITableViewDelegate, UITableViewDataSource {
                 return Cell
             }else if questionSetUserArr![cellValue].type == "text" {
                 
-                let Cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCheckBoxCell") as! QuestionCheckBoxCell
-                Cell.lblQuestionName.text = array[indexPath.row]
+               let Cell = tableView.dequeueReusableCell(withIdentifier: "TextBoxCell") as! TextBoxCell
                 return Cell
                 
             }else{

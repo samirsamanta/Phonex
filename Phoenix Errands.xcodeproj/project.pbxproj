@@ -128,6 +128,8 @@
 		EF891A9522FAFB7F00E478B8 /* LoginHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF891A9422FAFB7F00E478B8 /* LoginHeaderCell.swift */; };
 		EF891A9822FB041200E478B8 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF891A9722FB041200E478B8 /* RegisterVC.swift */; };
 		EF891A9B22FB04E500E478B8 /* RegisterHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF891A9A22FB04E500E478B8 /* RegisterHeaderCell.swift */; };
+		EFA35A2C231F906E002B01D5 /* TextBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA35A2A231F906E002B01D5 /* TextBoxCell.swift */; };
+		EFA35A2D231F906E002B01D5 /* TextBoxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFA35A2B231F906E002B01D5 /* TextBoxCell.xib */; };
 		FEF6A308E224631A5DE69945 /* Pods_Phoenix_ErrandsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277DC44111A01F6FFCC48C0E /* Pods_Phoenix_ErrandsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -299,6 +301,8 @@
 		EF891A9422FAFB7F00E478B8 /* LoginHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHeaderCell.swift; sourceTree = "<group>"; };
 		EF891A9722FB041200E478B8 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		EF891A9A22FB04E500E478B8 /* RegisterHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeaderCell.swift; sourceTree = "<group>"; };
+		EFA35A2A231F906E002B01D5 /* TextBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBoxCell.swift; sourceTree = "<group>"; };
+		EFA35A2B231F906E002B01D5 /* TextBoxCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextBoxCell.xib; sourceTree = "<group>"; };
 		FE8A56F494309AD1192F964C /* Pods-Phoenix ErrandsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phoenix ErrandsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Phoenix ErrandsTests/Pods-Phoenix ErrandsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -951,6 +955,8 @@
 				EF7ADEA622FD9A23008DADCB /* ServiceQuestionAnswerCell.swift */,
 				EF7ADEA822FD9BDC008DADCB /* QuestionCheckBoxCell.swift */,
 				EF7ADEA922FD9BDC008DADCB /* QuestionCheckBoxCell.xib */,
+				EFA35A2A231F906E002B01D5 /* TextBoxCell.swift */,
+				EFA35A2B231F906E002B01D5 /* TextBoxCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1173,6 +1179,7 @@
 				EF44144F22F9530300217BCA /* Assets.xcassets in Resources */,
 				38018168230A7F73009A2DAB /* Contacts.storyboard in Resources */,
 				EF6CFF9323028C9300662CF3 /* RequestCell.xib in Resources */,
+				EFA35A2D231F906E002B01D5 /* TextBoxCell.xib in Resources */,
 				3801815D230A7F46009A2DAB /* Request.storyboard in Resources */,
 				EF6CFFA023028D0900662CF3 /* ApplyCell.xib in Resources */,
 				EF4414AA22F9613400217BCA /* Roboto-Medium.ttf in Resources */,
@@ -1430,6 +1437,7 @@
 				EF44148B22F95E4800217BCA /* AppPreferenceService.swift in Sources */,
 				EF891A8D22FA9BC700E478B8 /* HomeVC.swift in Sources */,
 				38018187230AD1E5009A2DAB /* AddPaymentVC.swift in Sources */,
+				EFA35A2C231F906E002B01D5 /* TextBoxCell.swift in Sources */,
 				EF44144522F9530100217BCA /* AppDelegate.swift in Sources */,
 				EF7ADEAE22FDA28B008DADCB /* ServiceSearchVC.swift in Sources */,
 				EF85E2E12317E4E300D12AD8 /* CategoryModel.swift in Sources */,
