@@ -22,6 +22,7 @@ class LoginVC: UIViewController {
         self.initializeViewModel()
         userObject.userName = "samir1104@gmail.com"
         userObject.userPassword = "Samir1103@1qaz"
+        print(" login check")
     }
     
     @IBAction func btnCloseAction(_ sender: Any) {
