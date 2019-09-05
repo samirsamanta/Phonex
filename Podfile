@@ -8,12 +8,15 @@ target 'Phoenix Errands' do
   pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage'
-  pod 'moa'
   pod 'Auk'
   pod 'GoogleMaps'
   pod 'Localize-Swift'
   pod 'PayCardsRecognizer'
   pod 'HideShowPasswordTextField', :git => 'https://github.com/Guidebook/HideShowPasswordTextField'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'GoogleSignIn'
+  pod 'GoogleMaps'
   # Pods for Phoenix Errands
 
   target 'Phoenix ErrandsTests' do

@@ -5,11 +5,38 @@ PODS:
     - ObjectMapper (~> 3.4)
   - Auk (10.0.0):
     - moa
+  - FacebookCore (0.7.0):
+    - FBSDKCoreKit (~> 5.0)
+  - FacebookLogin (0.7.0):
+    - FacebookCore (~> 0.7)
+    - FBSDKCoreKit (~> 5.0)
+    - FBSDKLoginKit (~> 5.0)
+  - FBSDKCoreKit (5.2.2):
+    - FBSDKCoreKit/Basics (= 5.2.2)
+    - FBSDKCoreKit/Core (= 5.2.2)
+  - FBSDKCoreKit/Basics (5.2.2)
+  - FBSDKCoreKit/Core (5.2.2):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (5.2.2):
+    - FBSDKCoreKit (~> 5.0)
   - GoogleMaps (3.1.0):
     - GoogleMaps/Maps (= 3.1.0)
   - GoogleMaps/Base (3.1.0)
   - GoogleMaps/Maps (3.1.0):
     - GoogleMaps/Base
+  - GoogleSignIn (4.4.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.1):
+    - GoogleToolboxForMac/Defines (= 2.2.1)
+  - GoogleToolboxForMac/Defines (2.2.1)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.1)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.1)
+    - GoogleToolboxForMac/Defines (= 2.2.1)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.1)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.1)"
+  - GTMSessionFetcher/Core (1.2.2)
   - HideShowPasswordTextField (0.3)
   - IQKeyboardManagerSwift (6.3.0)
   - Localize-Swift (2.0.0)
@@ -24,11 +51,13 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper (~> 5.0)
   - Auk
+  - FacebookCore
+  - FacebookLogin
   - GoogleMaps
+  - GoogleSignIn
   - HideShowPasswordTextField (from `https://github.com/Guidebook/HideShowPasswordTextField`)
   - IQKeyboardManagerSwift
   - Localize-Swift
-  - moa
   - PayCardsRecognizer
   - SDWebImage
 
@@ -37,7 +66,14 @@ SPEC REPOS:
     - Alamofire
     - AlamofireObjectMapper
     - Auk
+    - FacebookCore
+    - FacebookLogin
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - GoogleMaps
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
     - IQKeyboardManagerSwift
     - Localize-Swift
     - moa
@@ -58,7 +94,14 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   Auk: 4aef1683b8cbe7d66388ac22d0ec622d0d1426d3
+  FacebookCore: 4eee98476cb37a485af5d337eb21f8cd5b3c7e6c
+  FacebookLogin: 94cdad6850e86a2b04704dedfe7674a7af8148eb
+  FBSDKCoreKit: e56801ebceaee1eaa4019e53bfaa04dc6ad2a60d
+  FBSDKLoginKit: 32af638b7e00b6bb2b22698bbeb72113bdacfd3a
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
+  GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
+  GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   HideShowPasswordTextField: 9426177a6b6498a6084e29ad65bba7d1157951b7
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
@@ -67,6 +110,6 @@ SPEC CHECKSUMS:
   PayCardsRecognizer: b939eec21c6890d57c9f22cb8856517922b097a2
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
 
-PODFILE CHECKSUM: ea5395551d08e0bfc452d68aacccade1f99e0ab2
+PODFILE CHECKSUM: 5714d699ee97287d1fb213b2f40b5a958c622c40
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.4
