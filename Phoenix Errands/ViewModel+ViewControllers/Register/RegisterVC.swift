@@ -88,6 +88,7 @@ class RegisterVC: UIViewController {
                 //                params.FcmToken = AppPreferenceService.getString(PreferencesKeys.FCMTokenDeviceID)
                 //                params.SocialType = "Facebook"
                 //self.googleSignInViewModel.sendSocialUserSignUpCredentialsToAPIService(user: params)
+                print("hello")
             }
             else{
                 print(error?.localizedDescription ?? "Not found")
