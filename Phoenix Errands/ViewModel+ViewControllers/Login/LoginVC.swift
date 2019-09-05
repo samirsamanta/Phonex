@@ -21,6 +21,7 @@ class LoginVC: UIViewController
     }()
     var userDetails = UserResponse()
     var fbdataDict = [String:Any]()
+    var popup: ForgotPassword!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,21 +76,31 @@ class LoginVC: UIViewController
                 self.fbdataDict = fbDetails as! [String : Any]
                 print("fbdataDict==>\(self.fbdataDict)")
                 print("first_name==>\(self.fbdataDict["first_name"] as! String)")
-                //                let params = UserRegistration()
-                //                params.FirstName = (self.fbdataDict["first_name"] as! String)
-                //                params.LastName = (self.fbdataDict["last_name"] as! String)
-                //                params.EmailID = (self.fbdataDict["email"] as! String)
-                //                params.SocialID = (self.fbdataDict["id"] as! String)
-                //                params.FcmToken = AppPreferenceService.getString(PreferencesKeys.FCMTokenDeviceID)
-                //                params.SocialType = "Facebook"
-                //self.googleSignInViewModel.sendSocialUserSignUpCredentialsToAPIService(user: params)
             }
             else{
                 print(error?.localizedDescription ?? "Not found")
             }
         })
     }
+    func ForgotPasswordAction()
+    {
+        self.popup = ForgotPassword(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height))
+        self.view.addSubview(self.popup!)
+        self.popup.btnCalcel.addTarget(self, action: #selector(btnCalcelTapped), for: UIControl.Event.touchUpInside)
+        self.popup.btnForgotPassword.addTarget(self, action: #selector(btnSubmitTapped), for: UIControl.Event.touchUpInside)
+    }
+    @objc func btnCalcelTapped()
+    {
+        self.popup.removeFromSuperview()
+    }
     
+    @objc func btnSubmitTapped()
+    {
+        var userObject = UserModel()
+        userObject.userName = popup.txtEmail.text
+        viewModel.sendForgotCredentialsToAPIService(user: userObject)
+        
+    }
     func initializeViewModel() {
         
         viewModel.showAlertClosure = {[weak self]() in
@@ -129,6 +140,21 @@ class LoginVC: UIViewController
                 }
             }
         }
+        
+        viewModel.refreshForgotpasswordViewClosure = {[weak self]() in
+            DispatchQueue.main.async {
+                
+                if  (self?.viewModel.userDetails.status) == 200 {
+                    self!.userDetails = (self?.viewModel.userDetails)!
+                    
+                    self?.showAlertWithSingleButton(title: commonAlertTitle, message: (self?.viewModel.userDetails.message)!, okButtonText: okText, completion: nil)
+                    self?.popup.removeFromSuperview()
+                    
+                }else{
+                    self?.showAlertWithSingleButton(title: commonAlertTitle, message: (self?.viewModel.userDetails.message)!, okButtonText: okText, completion: nil)
+                }
+            }
+        }
     }
 }
 
@@ -155,6 +181,7 @@ extension LoginVC : UITableViewDelegate, UITableViewDataSource, LoginDelegate {
             Cell.txtFieldEmail.delegate = self
             Cell.txtFieldPassword.delegate = self
             Cell.initializeCellObject(cellDic : userObject)
+            Cell.btnDelegate = self
             return Cell
         default:
             return UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")

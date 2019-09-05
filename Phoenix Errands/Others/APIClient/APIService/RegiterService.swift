@@ -21,6 +21,7 @@ class RegiterService: RegiterServiceProtocol {
         let header = ["Content-Type" : "application/json"]
         Alamofire.request(loginApi, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header).responseObject {(response: DataResponse<UserResponse>) in
             print("loginApi==>\(loginApi)")
+            print("params==>\(params)")
             let loginApiResponse : Response!
             
             var responseStausCode: Int = 1

@@ -11,6 +11,7 @@ class LoginVM {
     
     let apiService: SignInServiceProtocol
     var refreshViewClosure: (() -> ())?
+    var refreshForgotpasswordViewClosure: (() -> ())?
     var showAlertClosure: (()->())?
     var updateLoadingStatus: (()->())?
     
@@ -57,6 +58,31 @@ class LoginVM {
             }
         }
     }//UserTouch
+    func sendForgotCredentialsToAPIService(user: UserModel) {
+        
+        if !AppDelegate.appDelagate().isReachable() {
+            self.alertMessage = internetConnectionWarningMessage
+            return
+        }
+        
+        if let params = self.validateUserInputsforgotpassword(user: user) {
+            self.isLoading = true
+            self.apiService.sendForgotPassword(params: params) { [weak self] (response) in
+                self?.isLoading = false
+                if response.responseStatus == .success {
+                    let responseData = response.data as? UserResponse
+                    if let _ = responseData?.status, let getUserDetails = responseData {
+                        self?.userDetails = getUserDetails
+                        self?.refreshForgotpasswordViewClosure?()
+                    } else {
+                        self?.alertMessage = responseData?.message
+                    }
+                } else {
+                    self?.alertMessage = response.message
+                }
+            }
+        }
+    }
     
     func validateUserInputs(user: UserModel) -> [String: Any]? {
         guard let email = user.userName, !email.isEmpty else {
@@ -65,6 +91,14 @@ class LoginVM {
         }
         guard let password = user.userPassword, !password.isEmpty else {
             self.alertMessage = enterPasswordString
+            return nil
+        }
+        return user.toJSON()
+    }
+    
+    func validateUserInputsforgotpassword(user: UserModel) -> [String: Any]? {
+        guard let email = user.userName, !email.isEmpty else {
+            self.alertMessage = shouldEnterTheEmailName
             return nil
         }
         return user.toJSON()

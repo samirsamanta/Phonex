@@ -126,6 +126,7 @@ class RegisterVC: UIViewController {
                     
                     AppPreferenceService.setInteger(IS_LOGGED_IN, key: PreferencesKeys.loggedInStatus)
                     AppPreferenceService.setString(String((self?.viewModel.userDetails.id!)!), key: PreferencesKeys.userID)
+                    AppPreferenceService.setString(String((self?.viewModel.userDetails.authorizationToke!)!), key: PreferencesKeys.userToken)
                     AppPreferenceService.setString(String((self?.viewModel.userDetails.email!)!), key: PreferencesKeys.userName)
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.openHomeViewController()

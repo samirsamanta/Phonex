@@ -22,6 +22,7 @@ class APIConstants: NSObject {
     static let skillURl = "skill"
     static let contactURl = "contact"
     static let questionAnswerURl = "questionsets/"
+    static let forgotPasswordURl = "forgetpassword"
     
     
     static func introApi() -> String {
@@ -51,5 +52,8 @@ class APIConstants: NSObject {
     }
     static func questionAnsweApi() -> String {
         return baseURL + questionAnswerURl
+    }
+    static func forgotPasswordApi() -> String {
+        return baseURL + forgotPasswordURl
     }
 }

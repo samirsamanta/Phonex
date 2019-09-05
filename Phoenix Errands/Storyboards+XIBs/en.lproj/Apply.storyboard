@@ -84,7 +84,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U7p-Ns-flH">
-                                <rect key="frame" x="0.0" y="147" width="320" height="421"/>
+                                <rect key="frame" x="0.0" y="147" width="320" height="358"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="E25-Tl-oW5">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="78"/>
@@ -144,7 +144,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RSq-ha-c3V" firstAttribute="bottom" secondItem="U7p-Ns-flH" secondAttribute="bottom" id="7Ds-Wp-aXv"/>
+                            <constraint firstItem="RSq-ha-c3V" firstAttribute="bottom" secondItem="U7p-Ns-flH" secondAttribute="bottom" constant="63" id="7Ds-Wp-aXv"/>
                             <constraint firstItem="JIY-Ne-y7a" firstAttribute="top" secondItem="RSq-ha-c3V" secondAttribute="top" constant="80" id="9Tt-wl-Czv"/>
                             <constraint firstItem="JIY-Ne-y7a" firstAttribute="leading" secondItem="RSq-ha-c3V" secondAttribute="leading" id="ITc-jx-CMK"/>
                             <constraint firstItem="U7p-Ns-flH" firstAttribute="leading" secondItem="RSq-ha-c3V" secondAttribute="leading" id="JBl-zz-kb8"/>

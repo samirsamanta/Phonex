@@ -28,6 +28,8 @@
 		38453E66230E98920016374A /* WereGoingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38453E65230E98920016374A /* WereGoingVC.swift */; };
 		38453E69230EA6060016374A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38453E68230EA6060016374A /* SettingsVC.swift */; };
 		38453E6C230EAFAE0016374A /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38453E6B230EAFAE0016374A /* ChangePasswordVC.swift */; };
+		386FC7E72320DE04006A1C52 /* ForgotPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386FC7E62320DE04006A1C52 /* ForgotPassword.xib */; };
+		386FC7E92320DE3C006A1C52 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386FC7E82320DE3C006A1C52 /* ForgotPassword.swift */; };
 		6ACE46DBF913C50B4E83B5C3 /* Pods_Phoenix_Errands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F3E8A9DE4205D05DC65637 /* Pods_Phoenix_Errands.framework */; };
 		EF0C310D23194CBC00C42DA7 /* ProviderListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C310C23194CBC00C42DA7 /* ProviderListService.swift */; };
 		EF0C310F23194EAD00C42DA7 /* SkillListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C310E23194EAD00C42DA7 /* SkillListModel.swift */; };
@@ -188,6 +190,8 @@
 		38453E65230E98920016374A /* WereGoingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WereGoingVC.swift; sourceTree = "<group>"; };
 		38453E68230EA6060016374A /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		38453E6B230EAFAE0016374A /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		386FC7E62320DE04006A1C52 /* ForgotPassword.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPassword.xib; sourceTree = "<group>"; };
+		386FC7E82320DE3C006A1C52 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		43CA1F46ECF114009C6192B6 /* Pods_Phoenix_ErrandsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phoenix_ErrandsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47C569E1FE9F6BA5FEB8FC15 /* Pods-Phoenix ErrandsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phoenix ErrandsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phoenix ErrandsUITests/Pods-Phoenix ErrandsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		57A2632DE162344219AAB19E /* Pods-Phoenix Errands.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phoenix Errands.release.xcconfig"; path = "Pods/Target Support Files/Pods-Phoenix Errands/Pods-Phoenix Errands.release.xcconfig"; sourceTree = "<group>"; };
@@ -433,6 +437,15 @@
 			path = "New Group2";
 			sourceTree = "<group>";
 		};
+		386FC7E52320DD99006A1C52 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				386FC7E62320DE04006A1C52 /* ForgotPassword.xib */,
+				386FC7E82320DE3C006A1C52 /* ForgotPassword.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
 		3930A6DB9BB08E656E272518 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +532,7 @@
 		EF44147522F95D2F00217BCA /* ViewModel+ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				386FC7E52320DD99006A1C52 /* ForgotPassword */,
 				3801814A230A6D0B009A2DAB /* Discover */,
 				3805FEC52303E12E00FFBE16 /* Activity */,
 				EF6CFFA123028D2900662CF3 /* Contacts */,
@@ -1193,6 +1207,7 @@
 				EF6CFF8A23028B9100662CF3 /* ProfileCell.xib in Resources */,
 				EF44144A22F9530100217BCA /* Main.storyboard in Resources */,
 				38018176230AAACD009A2DAB /* Apply.storyboard in Resources */,
+				386FC7E72320DE04006A1C52 /* ForgotPassword.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1403,6 +1418,7 @@
 				EF53DDA4231E4DED0094E60E /* QuestionAnswerSetService.swift in Sources */,
 				EF5BD7452316B82E000361C2 /* RegiterService.swift in Sources */,
 				EF44149F22F95FC400217BCA /* FoundationExtensions.swift in Sources */,
+				386FC7E92320DE3C006A1C52 /* ForgotPassword.swift in Sources */,
 				EF87FF2322FC05810051DC8E /* HeaderView.swift in Sources */,
 				EF44147E22F95D9A00217BCA /* CustomLoaderView.swift in Sources */,
 				EF6CFF9023028C8000662CF3 /* RequestVC.swift in Sources */,

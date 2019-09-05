@@ -51,7 +51,7 @@ class BaseViewController: UIViewController {
             height = 100
             footerHeight = 80
            constantValue = 15
-        case "iPhone 7":
+        case "Simulator iPhone 7":
             constantValue = 15
             height = 100
             footerHeight = 80

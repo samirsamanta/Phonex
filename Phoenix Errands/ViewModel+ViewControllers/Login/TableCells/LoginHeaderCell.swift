@@ -10,6 +10,7 @@ import UIKit
 protocol LoginDelegate {
     func logInWithGmailAction()
     func logInWithFaceBookAction()
+    func ForgotPasswordAction()
 }
 
 class LoginHeaderCell: UITableViewCell {
@@ -38,6 +39,7 @@ class LoginEmailPasswordCell: UITableViewCell {
     
     @IBOutlet weak var txtFieldEmail: UITextField!
     @IBOutlet weak var txtFieldPassword: UITextField!
+    var btnDelegate : LoginDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -54,6 +56,6 @@ class LoginEmailPasswordCell: UITableViewCell {
     }
     
     @IBAction func buttonForgotPasswordAction(_ sender: Any) {
-        
+        self.btnDelegate?.ForgotPasswordAction()
     }
 }
